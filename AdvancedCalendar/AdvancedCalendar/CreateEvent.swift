@@ -66,11 +66,8 @@ class CreateEvent: NSWindowController  , NSComboBoxDelegate  {
         repeatOutlet.addItem(withObjectValue: "Weekly")
         repeatOutlet.stringValue = "none"
         self.SetDate();
-        
-        
-        
-
     }
+
     @IBAction func startDateChanged(_ sender: Any) {
         if (allDayEvent) {
             let startDate = startDateOutlet.dateValue
@@ -79,7 +76,7 @@ class CreateEvent: NSWindowController  , NSComboBoxDelegate  {
             components.hour = 0
             components.minute = 0
             components.second = 0
-            
+            components.day = components.day! + 1;
             let endDate = calendar.date(from: components)!
             endDateOutlet.dateValue = endDate
 
@@ -93,7 +90,8 @@ class CreateEvent: NSWindowController  , NSComboBoxDelegate  {
         components.hour = 0
         components.minute = 0
         components.second = 0
-        
+        components.day = components.day! + 1;
+
         let endDate = calendar.date(from: components)!
         startDateOutlet.dateValue = startDate
         endDateOutlet.dateValue = endDate
@@ -123,7 +121,6 @@ class CreateEvent: NSWindowController  , NSComboBoxDelegate  {
            
         }
         
-
     }
     
     func setAlarmForEvent( _ alarms : [EKAlarm])
@@ -247,9 +244,13 @@ class CreateEvent: NSWindowController  , NSComboBoxDelegate  {
     @IBAction func createEvent(_ sender: AnyObject) {
         
         let eventStore = EKEventStore();
-        
-        let calendars : NSArray = eventStore.calendars(for: EKEntityType.event) as NSArray
+        var type = EKEntityType.event;
+        if reminderEvent {
+            type = EKEntityType.reminder
+        }
+        let calendars : NSArray = eventStore.calendars(for: type) as NSArray
         var _calendar : EKCalendar
+
         // 2
         let calendarTitle = calendarOutlet.stringValue
          let predicate =  NSPredicate(format:"title matches %@", calendarTitle)
@@ -324,7 +325,10 @@ class CreateEvent: NSWindowController  , NSComboBoxDelegate  {
                 
                 self.dismissViewControllerAnimated(true, completion: nil)*/
             } catch {
-              //  let alert = NSAlert(title: "Event could not save", message: (error as NSError).localizedDescription, preferredStyle: .Alert)
+                let err = error as NSError
+//                let details = err.localizedDescription
+//                let alert = NSAlert(title: "Event could not save", message: details, preferredStyle: .Alert)
+                NSApp.presentError(err)
                 print("\((error as NSError).localizedDescription)")
                
             

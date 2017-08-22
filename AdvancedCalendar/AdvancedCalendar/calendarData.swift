@@ -14,36 +14,60 @@ import EventKit
 
 
 
-private let _SingletonSharedInstance = EventStore()
-
-class EventStore {
-    let eventStore = EKEventStore ()
-    
-    class var sharedInstance : EventStore {
-        return _SingletonSharedInstance
-    }
-    
-    init() {
-        
-        let sema = DispatchSemaphore(value: 0)
-        var hasAccess = false
-        
-        eventStore.requestAccess(to: EKEntityType.event, completion: { (granted:Bool, error:NSError?) in hasAccess = granted; sema.signal() } as! EKEventStoreRequestAccessCompletionHandler)
-        
-//        sema.wait(timeout: DispatchTime.distantFuture)
-      
-        if (!hasAccess) {
-            let myPopup: NSAlert = NSAlert()
-            myPopup.messageText = "Access Denied!"
-            myPopup.informativeText = "Please allow access to calendars app"
-            myPopup.alertStyle = NSAlertStyle.warning
-            myPopup.addButton(withTitle: "OK")
-            myPopup.runModal()
-            let sharedWorkspace = NSWorkspace.shared()
-            sharedWorkspace.openFile("/Applications/System Preferences.app")
-        }
-    }
-}
+//private let _SingletonSharedInstance = EventStore()
+//
+//class EventStore {
+//    let eventStore = EKEventStore ()
+//    
+//    class var sharedInstance : EventStore {
+//        return _SingletonSharedInstance
+//    }
+//    
+//    init() {
+//        
+//        let sema = DispatchSemaphore(value: 0)
+//        var hasAccess = false
+//        
+//        eventStore.requestAccess(to: EKEntityType.event, completion: { (granted:Bool, error:NSError?) in hasAccess = granted; sema.signal() } as! EKEventStoreRequestAccessCompletionHandler)
+//        
+////        sema.wait(timeout: DispatchTime.distantFuture)
+//      
+//        if (!hasAccess) {
+//            let myPopup: NSAlert = NSAlert()
+//            myPopup.messageText = "Access Denied!"
+//            myPopup.informativeText = "Please allow access to calendars app"
+//            myPopup.alertStyle = NSAlertStyle.warning
+//            myPopup.addButton(withTitle: "OK")
+//            myPopup.runModal()
+//            let sharedWorkspace = NSWorkspace.shared()
+//            sharedWorkspace.openFile("/Applications/System Preferences.app")
+//        }
+//        authorizedReminder()
+//
+//    }
+//    
+//   func authorizedReminder() {
+//        
+//        let sema = DispatchSemaphore(value: 0)
+//        var hasAccess = false
+//        
+//        eventStore.requestAccess(to: EKEntityType.reminder, completion: { (granted:Bool, error:NSError?) in hasAccess = granted; sema.signal() } as! EKEventStoreRequestAccessCompletionHandler)
+//        
+//        //        sema.wait(timeout: DispatchTime.distantFuture)
+//        
+//        if (!hasAccess) {
+//            let myPopup: NSAlert = NSAlert()
+//            myPopup.messageText = "Access Denied!"
+//            myPopup.informativeText = "Please allow access to Reminders app"
+//            myPopup.alertStyle = NSAlertStyle.warning
+//            myPopup.addButton(withTitle: "OK")
+//            myPopup.runModal()
+//            let sharedWorkspace = NSWorkspace.shared()
+//            sharedWorkspace.openFile("/Applications/System Preferences.app")
+//        }
+//    }
+//
+//}
 
 // EVENT TYPE
 
@@ -276,7 +300,7 @@ class CalendarData: NSObject {
         }
         
         getAllEvents()
-      
+        getAllRemindersEvents()
         
     }
     
@@ -403,6 +427,91 @@ class CalendarData: NSObject {
         
     }
     
+    func getAllRemindersEvents()
+    {
+        let eventStore = EKEventStore ()
+        ///  5th June. for the defalt.
+        var hasAccess = false
+        let sema = DispatchSemaphore(value: 0)
+        
+        switch EKEventStore.authorizationStatus(for: .reminder) {
+        case .authorized:
+            print("Access Granted")
+            hasAccess = true
+            break
+        case .denied:
+            print("Access denied")
+            return
+        case .notDetermined:
+            
+            eventStore.requestAccess(to: .event, completion: { (granted, error) in
+                
+                hasAccess = granted
+                
+                sema.signal()
+            })
+            
+            //            sema.wait(timeout: DispatchTime.distantFuture)
+            //            sema .wait(timeout: DispatchTime.distantFuture)
+            break
+        default:
+            print("Case Default")
+            break
+        }
+        
+        if (!hasAccess) {
+            
+            let myPopup: NSAlert = NSAlert()
+            myPopup.messageText = "Access Denied!"
+            myPopup.informativeText = "Please allow access to Reminders app"
+            myPopup.alertStyle = NSAlertStyle.informational
+            myPopup.addButton(withTitle: "OK")
+            myPopup.runModal()
+            let sharedWorkspace = NSWorkspace.shared()
+            sharedWorkspace.openFile("/Applications/System Preferences.app")
+            return
+        }
+        
+        for et in eventStore.calendars(for: EKEntityType.reminder) {
+            
+            
+            // start Date
+            var components = DateComponents();
+            
+            var calendarCellValue: calendarCell = selectedMonthCalArray[0][0]
+            
+            components.day = calendarCellValue.day
+            components.month = calendarCellValue.month
+            components.year = calendarCellValue.year
+            
+            let startDate =  Calendar.current.date(from: components)!
+            
+            
+            calendarCellValue = selectedMonthCalArray[5][6]
+            
+            components.day = calendarCellValue.day
+            components.month = calendarCellValue.month
+            components.year = calendarCellValue.year
+            
+            let endDate =  Calendar.current.date(from: components)!
+            
+            let predicate = eventStore.predicateForEvents(withStart: startDate, end: endDate, calendars: [et])
+            
+            let events = eventStore.events(matching: predicate)
+                //14th June
+                .sorted {
+                    $0.startDate.compare($1.startDate) == ComparisonResult.orderedAscending
+            }
+            // 9th June print log.
+            print(components.day!)
+            print(components.year!)
+            print(components.month!)
+            
+            addSingleEventsInCalendar(events , type:REMINDER)
+            
+        }
+        
+    }
     
        
     func addSingleEventsInCalendar(_ events  : [EKEvent] , type : Int)

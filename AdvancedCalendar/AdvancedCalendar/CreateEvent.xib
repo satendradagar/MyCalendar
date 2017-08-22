@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="CreateEvent" customModule="samyCalendar" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="CreateEvent" customModule="AdvancedCalendar" customModuleProvider="target">
             <connections>
                 <outlet property="CreateEventWindow" destination="F0z-JX-Cv5" id="khI-A9-PB0"/>
                 <outlet property="LocationOutlet" destination="G0A-da-HzJ" id="VXZ-3B-vIj"/>
@@ -28,12 +28,12 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" unifiedTitleAndToolbar="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="309" height="375"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
-            <view key="contentView" id="se5-gp-TjO" customClass="WhiteView" customModule="samyCalendar" customModuleProvider="target">
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <view key="contentView" id="se5-gp-TjO" customClass="WhiteView" customModule="AdvancedCalendar" customModuleProvider="target">
                 <rect key="frame" x="0.0" y="0.0" width="309" height="375"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jJT-tg-vvc" customClass="WhiteView" customModule="samyCalendar" customModuleProvider="target">
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jJT-tg-vvc" customClass="WhiteView" customModule="AdvancedCalendar" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="309" height="375"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
@@ -87,7 +87,7 @@
                                 </connections>
                             </button>
                             <datePicker verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R7O-70-ccz">
-                                <rect key="frame" x="96" y="204" width="172" height="31"/>
+                                <rect key="frame" x="96" y="204" width="172" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="N6t-k3-p44">
                                     <font key="font" metaFont="system"/>
@@ -115,17 +115,17 @@
                                     <datePickerElements key="datePickerElements" year="YES" month="YES" day="YES" hour="YES" minute="YES"/>
                                 </datePickerCell>
                                 <connections>
+                                    <binding destination="-2" name="enabled" keyPath="self.allDayEvent" id="9gy-NS-I9g">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                        </dictionary>
+                                    </binding>
                                     <binding destination="-2" name="enabled2" keyPath="self.reminderEvent" previousBinding="9gy-NS-I9g" id="PRJ-4j-EZh">
                                         <dictionary key="options">
                                             <integer key="NSMultipleValuesPlaceholder" value="-1"/>
                                             <integer key="NSNoSelectionPlaceholder" value="-1"/>
                                             <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                             <integer key="NSNullPlaceholder" value="-1"/>
-                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
-                                        </dictionary>
-                                    </binding>
-                                    <binding destination="-2" name="enabled" keyPath="self.allDayEvent" id="9gy-NS-I9g">
-                                        <dictionary key="options">
                                             <string key="NSValueTransformerName">NSNegateBoolean</string>
                                         </dictionary>
                                     </binding>
@@ -206,15 +206,15 @@
             <connections>
                 <outlet property="delegate" destination="fwT-Hq-dG0" id="qnT-rf-x5X"/>
             </connections>
-            <point key="canvasLocation" x="254.5" y="362.5"/>
+            <point key="canvasLocation" x="42" y="256"/>
         </window>
-        <customObject id="TW7-Bd-66t" customClass="RepeatComboBoxDelegate" customModule="samyCalendar" customModuleProvider="target"/>
-        <customObject id="fwT-Hq-dG0" customClass="windowDel" customModule="samyCalendar" customModuleProvider="target"/>
+        <customObject id="TW7-Bd-66t" customClass="RepeatComboBoxDelegate" customModule="AdvancedCalendar" customModuleProvider="target"/>
+        <customObject id="fwT-Hq-dG0" customClass="windowDel" customModule="AdvancedCalendar" customModuleProvider="target"/>
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="LqM-fT-mPP">
             <windowStyleMask key="styleMask" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="163" y="199" width="266" height="121"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="UKQ-ea-VmN">
                 <rect key="frame" x="0.0" y="0.0" width="266" height="121"/>
                 <autoresizingMask key="autoresizingMask"/>
