@@ -77,7 +77,7 @@ let BIRTHDAY = 3
 
 class calendarEventItem{
     var type: Int = 0
-    var event: EKEvent = EKEvent()
+    var event: EKCalendarItem = EKCalendarItem()
 }
 
 class calendarCell{
@@ -444,7 +444,7 @@ class CalendarData: NSObject {
             return
         case .notDetermined:
             
-            eventStore.requestAccess(to: .event, completion: { (granted, error) in
+            eventStore.requestAccess(to: .reminder, completion: { (granted, error) in
                 
                 hasAccess = granted
                 
@@ -495,31 +495,67 @@ class CalendarData: NSObject {
             
             let endDate =  Calendar.current.date(from: components)!
             
-            let predicate = eventStore.predicateForEvents(withStart: startDate, end: endDate, calendars: [et])
+//            let predicate = eventStore.predicateForEvents(withStart: startDate, end: endDate, calendars: [et])
+            let predicate1 = eventStore.predicateForIncompleteReminders(withDueDateStarting: nil, ending: endDate, calendars: [et])
+            let predicate2 = eventStore.predicateForCompletedReminders(withCompletionDateStarting: nil, ending: endDate, calendars: [et])
+//            let predicate = NSCompoundPredicate.init(orPredicateWithSubpredicates: [predicate1,predicate2])
+             eventStore.fetchReminders(matching: predicate1, completion: { (reminders) in
+                self.addSingleEventsInCalendar(reminders , type:REMINDER)
+
+            })
+            eventStore.fetchReminders(matching: predicate2, completion: { (reminders) in
+                self.addSingleEventsInCalendar(reminders , type:REMINDER)
+                
+            })
             
-            let events = eventStore.events(matching: predicate)
+//            let events = eventStore.fetchRemindersMatchingPredicate(matching: predicate)
                 //14th June
-                .sorted {
-                    $0.startDate.compare($1.startDate) == ComparisonResult.orderedAscending
-            }
+//                .sorted {
+//                    $0.startDate.compare($1.startDate) == ComparisonResult.orderedAscending
+//            }
             // 9th June print log.
-            print(components.day!)
-            print(components.year!)
-            print(components.month!)
-            
-            addSingleEventsInCalendar(events , type:REMINDER)
-            
+//            print(components.day!)
+//            print(components.year!)
+//            print(components.month!)
+//            
+//            addSingleEventsInCalendar(events , type:REMINDER)
+//            
         }
         
     }
     
        
-    func addSingleEventsInCalendar(_ events  : [EKEvent] , type : Int)
+    func addSingleEventsInCalendar(_ events  : [EKCalendarItem]? , type : Int)
     {
-        for event in events {
+        guard (events != nil) else {
+            
+            print("Can't add nil objects")
+            return
+        }
+        
+        for event in events! {
+            
+            let startDateComponentsWithoutTime:DateComponents!
             
             let unitFlags: NSCalendar.Unit = [.day, .month, .year]
-            let startDateComponentsWithoutTime = (Calendar.current as NSCalendar).components(unitFlags, from: event.startDate)
+            if let eventObj = event as? EKEvent{
+                
+                 startDateComponentsWithoutTime = (Calendar.current as NSCalendar).components(unitFlags, from: eventObj.startDate)
+   
+            }
+            else
+            {
+                if let eventObj = event as? EKReminder{
+                    
+                    startDateComponentsWithoutTime = eventObj.startDateComponents
+                    
+                }
+                else{
+                    print("Initiating Blank component");
+                    startDateComponentsWithoutTime = DateComponents.init()
+                }
+
+            }
             
             for rowWeekIndex in 0 ... 5 {
                 for colDayIndex in 0 ... 6 {

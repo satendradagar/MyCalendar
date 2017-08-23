@@ -29,6 +29,8 @@
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="309" height="375"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <value key="minSize" type="size" width="309" height="375"/>
+            <value key="maxSize" type="size" width="309" height="375"/>
             <view key="contentView" id="se5-gp-TjO" customClass="WhiteView" customModule="AdvancedCalendar" customModuleProvider="target">
                 <rect key="frame" x="0.0" y="0.0" width="309" height="375"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,11 +85,12 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
+                                    <action selector="remiderSelectionDidChanged:" target="-2" id="06O-mD-cf7"/>
                                     <binding destination="-2" name="value" keyPath="self.reminderEvent" id="sIT-2O-uXg"/>
                                 </connections>
                             </button>
                             <datePicker verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R7O-70-ccz">
-                                <rect key="frame" x="96" y="204" width="172" height="27"/>
+                                <rect key="frame" x="120" y="207" width="172" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="N6t-k3-p44">
                                     <font key="font" metaFont="system"/>
@@ -103,7 +106,7 @@
                                 </connections>
                             </datePicker>
                             <datePicker verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cJa-5V-4Mh">
-                                <rect key="frame" x="96" y="173" width="170" height="27"/>
+                                <rect key="frame" x="120" y="176" width="170" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="GJi-zN-SWd">
                                     <font key="font" metaFont="system"/>
@@ -115,6 +118,7 @@
                                     <datePickerElements key="datePickerElements" year="YES" month="YES" day="YES" hour="YES" minute="YES"/>
                                 </datePickerCell>
                                 <connections>
+                                    <binding destination="-2" name="hidden" keyPath="self.reminderEvent" previousBinding="PRJ-4j-EZh" id="8Cu-Bm-CQl"/>
                                     <binding destination="-2" name="enabled" keyPath="self.allDayEvent" id="9gy-NS-I9g">
                                         <dictionary key="options">
                                             <string key="NSValueTransformerName">NSNegateBoolean</string>
@@ -132,7 +136,7 @@
                                 </connections>
                             </datePicker>
                             <comboBox identifier="repeatComboBox" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yx9-0j-pmA">
-                                <rect key="frame" x="96" y="141" width="170" height="26"/>
+                                <rect key="frame" x="120" y="141" width="170" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="Nhi-T4-2To">
                                     <font key="font" metaFont="system"/>
@@ -144,7 +148,7 @@
                                 </connections>
                             </comboBox>
                             <comboBox identifier="alertComboBox" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fZ-qQ-hBQ">
-                                <rect key="frame" x="96" y="113" width="170" height="26"/>
+                                <rect key="frame" x="120" y="113" width="170" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="hP6-Ay-eRK">
                                     <font key="font" metaFont="system"/>
@@ -153,36 +157,42 @@
                                 </comboBoxCell>
                             </comboBox>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4f2-oc-Oz9">
-                                <rect key="frame" x="36" y="207" width="41" height="17"/>
+                                <rect key="frame" x="36" y="210" width="78" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Starts" id="2xE-FR-N6B">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Starts" id="2xE-FR-N6B">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <binding destination="-2" name="value" keyPath="self.startTitle" id="9kA-GG-TbW"/>
+                                </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIN-G1-YYe">
-                                <rect key="frame" x="36" y="176" width="35" height="17"/>
+                                <rect key="frame" x="36" y="179" width="78" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Ends" id="PTf-gf-SPi">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Ends" id="PTf-gf-SPi">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <binding destination="-2" name="hidden" keyPath="self.reminderEvent" id="xzD-Xh-qtu"/>
+                                </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFi-vl-1gj">
-                                <rect key="frame" x="36" y="146" width="48" height="17"/>
+                                <rect key="frame" x="36" y="147" width="78" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Repeat" id="c8u-cu-vD2">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Repeat" id="c8u-cu-vD2">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PS3-nu-nla">
-                                <rect key="frame" x="36" y="119" width="33" height="17"/>
+                                <rect key="frame" x="36" y="118" width="78" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Alert" id="Xa2-5g-vFj">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Alert" id="Xa2-5g-vFj">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -206,7 +216,7 @@
             <connections>
                 <outlet property="delegate" destination="fwT-Hq-dG0" id="qnT-rf-x5X"/>
             </connections>
-            <point key="canvasLocation" x="42" y="256"/>
+            <point key="canvasLocation" x="41.5" y="255.5"/>
         </window>
         <customObject id="TW7-Bd-66t" customClass="RepeatComboBoxDelegate" customModule="AdvancedCalendar" customModuleProvider="target"/>
         <customObject id="fwT-Hq-dG0" customClass="windowDel" customModule="AdvancedCalendar" customModuleProvider="target"/>
@@ -234,5 +244,6 @@ DQ
             </view>
             <point key="canvasLocation" x="208" y="675.5"/>
         </window>
+        <userDefaultsController representsSharedInstance="YES" id="Qw9-dI-fj2"/>
     </objects>
 </document>

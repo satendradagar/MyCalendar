@@ -28,8 +28,9 @@ class CreateEvent: NSWindowController  , NSComboBoxDelegate  {
     @IBOutlet var CreateEventWindow: NSWindow!
     
     dynamic var allDayEvent:Bool = true
-    dynamic var reminderEvent:Bool = true
-   
+    dynamic var reminderEvent:Bool = false
+    dynamic var startTitle:String = "Starts"
+
     var days : [ EKRecurrenceDayOfWeek ]? = []
     var biweekly : Bool = false
     var rules : [EKRecurrenceRule] = []
@@ -69,7 +70,7 @@ class CreateEvent: NSWindowController  , NSComboBoxDelegate  {
     }
 
     @IBAction func startDateChanged(_ sender: Any) {
-        if (allDayEvent) {
+//        if (allDayEvent == true) {
             let startDate = startDateOutlet.dateValue
             var calendar = NSCalendar.current,
             components = calendar.dateComponents([.day,.month,.year], from: startDate)
@@ -80,7 +81,7 @@ class CreateEvent: NSWindowController  , NSComboBoxDelegate  {
             let endDate = calendar.date(from: components)!
             endDateOutlet.dateValue = endDate
 
-        }
+//        }
     }
     
     func SetDate() -> Void {
@@ -245,7 +246,7 @@ class CreateEvent: NSWindowController  , NSComboBoxDelegate  {
         
         let eventStore = EKEventStore();
         var type = EKEntityType.event;
-        if reminderEvent {
+        if true == reminderEvent {
             type = EKEntityType.reminder
         }
         let calendars : NSArray = eventStore.calendars(for: type) as NSArray
@@ -260,80 +261,14 @@ class CreateEvent: NSWindowController  , NSComboBoxDelegate  {
             _calendar = filtered[0] as! EKCalendar
             print(_calendar.title)
             
-            let newEvent = EKEvent(eventStore: eventStore)
-            
-            newEvent.calendar = _calendar
-            newEvent.title = eventNameOutlet.stringValue
-            newEvent.startDate = startDateOutlet.dateValue
-            newEvent.endDate = endDateOutlet.dateValue
-            
-            if( repeatOutlet.stringValue == "Daily")
-            {
-                newEvent.recurrenceRules?.append(EKRecurrenceRule(recurrenceWith: .daily, interval: 1, daysOfTheWeek: nil, daysOfTheMonth: nil, monthsOfTheYear: nil, weeksOfTheYear: nil, daysOfTheYear: nil, setPositions: nil, end: nil))
+            if true == self.reminderEvent {
                 
+                saveReminder(calendar: _calendar, inStore: eventStore)
             }
-            else if (repeatOutlet.stringValue == "Weekly" ){
-            
-                var interval = 1;
+            else{
                 
-                if(biweekly == true)
-                {
-                    interval = 2
-                }
-                
-                newEvent.addRecurrenceRule((EKRecurrenceRule(recurrenceWith: .weekly, interval: interval, daysOfTheWeek: days, daysOfTheMonth: nil, monthsOfTheYear: nil, weeksOfTheYear: nil, daysOfTheYear: nil, setPositions: nil, end: nil)))
+                saveEvent(calendar: _calendar, inStore: eventStore)
             }
-            
-            if(alertOutlet.stringValue != "none" )
-            {
-                var offset : TimeInterval = 0
-                
-                if(alertOutlet.stringValue == "At time of event"){
-                    offset = 0
-                }
-                else if (alertOutlet.stringValue == "5 minutes before"){
-                    offset = 5
-                }
-                else if (alertOutlet.stringValue == "15 minutes before"){
-                    offset = 15
-                }
-                else if (alertOutlet.stringValue == "1 hour before"){
-                    offset = 60
-                }
-                
-                offset = offset * 60
-                
-                if (  newEvent.alarms?.isEmpty == true)
-                {
-                    newEvent.alarms = [EKAlarm]()
-                }
-                
-                newEvent.addAlarm(EKAlarm(relativeOffset: offset))
-                
-            
-            }
-        
-           
-            
-
-            
-            // Save the calendar using the Event Store instance
-            
-            do {
-                try eventStore.save(newEvent, span: .thisEvent, commit: true)
-               /* delegate?.eventDidAdd()
-                
-                self.dismissViewControllerAnimated(true, completion: nil)*/
-            } catch {
-                let err = error as NSError
-//                let details = err.localizedDescription
-//                let alert = NSAlert(title: "Event could not save", message: details, preferredStyle: .Alert)
-                NSApp.presentError(err)
-                print("\((error as NSError).localizedDescription)")
-               
-            
-            }
-
             
         } else {
             
@@ -346,5 +281,182 @@ class CreateEvent: NSWindowController  , NSComboBoxDelegate  {
         NotificationCenter.default.post(name: customNotificationName, object: nil, userInfo: nil)
     }
     
+    func saveReminder( calendar:EKCalendar, inStore eventStore:EKEventStore)  {
+        
+        let newEvent = EKReminder(eventStore: eventStore)
+        
+        newEvent.calendar = calendar
+        newEvent.title = eventNameOutlet.stringValue
+//        newEvent.startDateComponents = startDateOutlet.dateValue.dateComponents()
+        newEvent.dueDateComponents = startDateOutlet.dateValue.dateComponents()
+        
+        if( repeatOutlet.stringValue == "Daily")
+        {
+            newEvent.recurrenceRules?.append(EKRecurrenceRule(recurrenceWith: .daily, interval: 1, daysOfTheWeek: nil, daysOfTheMonth: nil, monthsOfTheYear: nil, weeksOfTheYear: nil, daysOfTheYear: nil, setPositions: nil, end: nil))
+            
+        }
+        else if (repeatOutlet.stringValue == "Weekly" ){
+            
+            var interval = 1;
+            
+            if(biweekly == true)
+            {
+                interval = 2
+            }
+            
+            newEvent.addRecurrenceRule((EKRecurrenceRule(recurrenceWith: .weekly, interval: interval, daysOfTheWeek: days, daysOfTheMonth: nil, monthsOfTheYear: nil, weeksOfTheYear: nil, daysOfTheYear: nil, setPositions: nil, end: nil)))
+        }
+        
+        if(alertOutlet.stringValue != "none" )
+        {
+            var offset : TimeInterval = 0
+            
+            if(alertOutlet.stringValue == "At time of event"){
+                offset = 0
+            }
+            else if (alertOutlet.stringValue == "5 minutes before"){
+                offset = 5
+            }
+            else if (alertOutlet.stringValue == "15 minutes before"){
+                offset = 15
+            }
+            else if (alertOutlet.stringValue == "1 hour before"){
+                offset = 60
+            }
+            
+            offset = offset * 60
+            
+            if (  newEvent.alarms?.isEmpty == true)
+            {
+                newEvent.alarms = [EKAlarm]()
+            }
+            
+            newEvent.addAlarm(EKAlarm(relativeOffset: offset))
+            
+            
+        }
+        // Save the calendar using the Event Store instance
+        
+        do {
+            
+            try eventStore.save(newEvent, commit: true)
+//            try eventStore.save(newEvent, span: .thisEvent, commit: true)
+            /* delegate?.eventDidAdd()
+             
+             self.dismissViewControllerAnimated(true, completion: nil)*/
+        } catch {
+            let err = error as NSError
+            //                let details = err.localizedDescription
+            //                let alert = NSAlert(title: "Event could not save", message: details, preferredStyle: .Alert)
+            NSApp.presentError(err)
+            print("\((error as NSError).localizedDescription)")
 
+        }
+        
+    }
+    
+    func saveEvent( calendar:EKCalendar, inStore eventStore:EKEventStore)  {
+        
+        let newEvent = EKEvent(eventStore: eventStore)
+        
+        newEvent.calendar = calendar
+        newEvent.title = eventNameOutlet.stringValue
+        newEvent.startDate = startDateOutlet.dateValue
+        newEvent.endDate = endDateOutlet.dateValue
+        
+        if( repeatOutlet.stringValue == "Daily")
+        {
+            newEvent.recurrenceRules?.append(EKRecurrenceRule(recurrenceWith: .daily, interval: 1, daysOfTheWeek: nil, daysOfTheMonth: nil, monthsOfTheYear: nil, weeksOfTheYear: nil, daysOfTheYear: nil, setPositions: nil, end: nil))
+            
+        }
+        else if (repeatOutlet.stringValue == "Weekly" ){
+            
+            var interval = 1;
+            
+            if(biweekly == true)
+            {
+                interval = 2
+            }
+            
+            newEvent.addRecurrenceRule((EKRecurrenceRule(recurrenceWith: .weekly, interval: interval, daysOfTheWeek: days, daysOfTheMonth: nil, monthsOfTheYear: nil, weeksOfTheYear: nil, daysOfTheYear: nil, setPositions: nil, end: nil)))
+        }
+        
+        if(alertOutlet.stringValue != "none" )
+        {
+            var offset : TimeInterval = 0
+            
+            if(alertOutlet.stringValue == "At time of event"){
+                offset = 0
+            }
+            else if (alertOutlet.stringValue == "5 minutes before"){
+                offset = 5
+            }
+            else if (alertOutlet.stringValue == "15 minutes before"){
+                offset = 15
+            }
+            else if (alertOutlet.stringValue == "1 hour before"){
+                offset = 60
+            }
+            
+            offset = offset * 60
+            
+            if (  newEvent.alarms?.isEmpty == true)
+            {
+                newEvent.alarms = [EKAlarm]()
+            }
+            
+            newEvent.addAlarm(EKAlarm(relativeOffset: offset))
+            
+            
+        }
+        // Save the calendar using the Event Store instance
+        do {
+            try eventStore.save(newEvent, span: .thisEvent, commit: true)
+            /* delegate?.eventDidAdd()
+             
+             self.dismissViewControllerAnimated(true, completion: nil)*/
+        } catch {
+            let err = error as NSError
+            //                let details = err.localizedDescription
+            //                let alert = NSAlert(title: "Event could not save", message: details, preferredStyle: .Alert)
+            NSApp.presentError(err)
+            print("\((error as NSError).localizedDescription)")
+        }
+        
+    }
+    
+    @IBAction func remiderSelectionDidChanged(_ sender: Any) {
+        
+        let eventStore = EKEventStore();
+        let calendars : NSArray?
+        calendarOutlet.removeAllItems()
+        
+        if (true == reminderEvent) {
+            
+            calendars = eventStore.calendars(for: EKEntityType.reminder) as NSArray
+            calendarOutlet.stringValue = eventStore.defaultCalendarForNewReminders().title
+            startTitle = "Due At"
+        }
+        else{
+            calendars = eventStore.calendars(for: EKEntityType.event) as NSArray
+            calendarOutlet.stringValue = eventStore.defaultCalendarForNewEvents.title
+            startTitle = "Starts"
+        }
+        
+        for case let cal as EKCalendar in calendars! {
+            let item : NSString = cal.title as NSString
+            calendarOutlet.addItem(withObjectValue: item)
+        }
+
+    }
+
+}
+
+extension Date{
+    func dateComponents() -> DateComponents {
+        
+        let calendarUnitFlags: NSCalendar.Unit = [.year, .month, .day, .hour, .minute, .second,.timeZone]
+        let components = (Calendar.current as NSCalendar).components(calendarUnitFlags, from: self)
+        return components
+    }
 }

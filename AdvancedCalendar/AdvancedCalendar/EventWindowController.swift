@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import EventKit
 
 class EventWindowController: NSWindowController, NSTableViewDelegate ,NSTableViewDataSource {
 
@@ -93,15 +94,18 @@ class EventWindowController: NSWindowController, NSTableViewDelegate ,NSTableVie
         let calCell = calendarDataInstane.selectedMonthCalArray[calendarRow][calendarCol]
         let event = calCell.events[eventDataTableOutlet.clickedRow].event
         // 4th June 
-        _ = event.startDate
-        _ = event.endDate
+//        _ = event.startDate
+//        _ = event.endDate
 
         createEventWindowController.eventNameOutlet.stringValue = event.title
         
 //        createEventWindowController.LocationOutlet.stringValue = "dfsdf"
-        
-        createEventWindowController.startDateOutlet.dateValue = event.startDate
-        createEventWindowController.endDateOutlet.dateValue =  event.endDate
+        if let sDt = event.startD {
+            createEventWindowController.startDateOutlet.dateValue = sDt
+        }
+        if let eDt = event.endD {
+            createEventWindowController.endDateOutlet.dateValue =  eDt
+        }
         if(event.recurrenceRules?.isEmpty == false ){
             createEventWindowController.rules = event.recurrenceRules!
         }
@@ -200,4 +204,55 @@ class EventWindowController: NSWindowController, NSTableViewDelegate ,NSTableVie
         self.closeWindow()
 
     }
+}
+
+extension EKCalendarItem{
+ 
+    var startD: Date? {
+        get {
+            if self.isKind(of: EKEvent.self) {
+                
+                if let str = self as? EKEvent {
+//                    print("str\(str)")
+                    // success
+                    return str.startDate
+                } else {
+                    // fail
+                    if let str = self as? EKReminder {
+                        
+                        if let comps =  str.startDateComponents{
+                            
+                            let date = Calendar.current.date(from: comps)
+                            return date
+                        }
+                    }
+
+                }
+//
+            }
+            return nil
+        }
+    }
+    var endD: Date? {
+        get {            
+            if let str = self as? EKEvent {
+                //                    print("str\(str)")
+                // success
+                return str.endDate
+            } else {
+                // fail
+                if let str = self as? EKReminder {
+                    
+                    if let comps =  str.dueDateComponents{
+                        
+                        let date = Calendar.current.date(from: comps)
+                        return date
+                    }
+                }
+                
+            }
+            return nil
+        }
+    }
+
 }

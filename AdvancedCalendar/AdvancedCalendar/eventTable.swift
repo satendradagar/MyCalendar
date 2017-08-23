@@ -45,10 +45,15 @@ open class eventTable: NSObject , NSTableViewDataSource,NSTableViewDelegate{
         
         let calCell = calendarDataInstane.selectedMonthCalArray[calendarRow][calendarCol]
         let event = calCell.events[row].event
-        let startDate = event.startDate
-        let endDate = event.endDate
-        
-        let components =  durationComponents(startDate, endDate: endDate)
+        let startDate = event.startD
+        let endDate = event.endD
+//        if let startDate = event.startD {
+//
+//        }
+//        if let endDate = event.endD {
+//
+//        }
+//        let components =  durationComponents(startDate, endDate: endDate)
         
         var cellView : NSTableCellView
         
@@ -72,18 +77,19 @@ open class eventTable: NSObject , NSTableViewDataSource,NSTableViewDelegate{
         {
             cellView = tableView.make(withIdentifier: "eventDetailsView", owner: self) as! NSTableCellView
             
-            if( components.day! > 0) {
-                cellView.textField?.stringValue = ""
-            }
-            else{
+            if( startDate != nil) {
                 let dateFormatter: DateFormatter = DateFormatter()
                 if (PreferencesStore.sharedInstance.agendaTimeFormat == 0) {
                     dateFormatter.dateFormat = "hh:mm a"
                 }
                 else if(PreferencesStore.sharedInstance.agendaTimeFormat == 1){
-                dateFormatter.dateFormat = "HH:mm"
+                    dateFormatter.dateFormat = "HH:mm"
                 }
-                cellView.textField?.stringValue = "\( dateFormatter.string(from: event.startDate))"
+                cellView.textField?.stringValue = "\( dateFormatter.string(from: event.startD!))"
+            }
+            else{
+                cellView.textField?.stringValue = ""
+
             }
             return cellView
         
@@ -92,19 +98,20 @@ open class eventTable: NSObject , NSTableViewDataSource,NSTableViewDelegate{
         {
             cellView = tableView.make(withIdentifier: "eventDetailsView", owner: self) as! NSTableCellView
             
-            if( components.day! > 0) {
-                cellView.textField?.stringValue = ""
-            }
-            else{
+            if( nil != endDate) {
                 let dateFormatter: DateFormatter = DateFormatter()
                 if (PreferencesStore.sharedInstance.agendaTimeFormat == 0) {
-                       dateFormatter.dateFormat = "hh:mm a"
+                    dateFormatter.dateFormat = "hh:mm a"
                 }
                 else if(PreferencesStore.sharedInstance.agendaTimeFormat == 1){
                     dateFormatter.dateFormat = "HH:mm"
                 }
-             
-                cellView.textField?.stringValue = "\( dateFormatter.string(from: event.endDate))"
+                
+                cellView.textField?.stringValue = "\( dateFormatter.string(from: event.endD!))"
+            }
+            else{
+                cellView.textField?.stringValue = ""
+
             }
             return cellView
             
@@ -112,8 +119,14 @@ open class eventTable: NSObject , NSTableViewDataSource,NSTableViewDelegate{
         else if ( indexOfColumn == 4 )
         {
             cellView = tableView.make(withIdentifier: "eventDurationView", owner: self) as! NSTableCellView
-            
-            cellView.textField?.stringValue =   duration( event.startDate , endDate:event.endDate )
+            if nil != startDate && nil != endDate {
+                cellView.textField?.stringValue = duration( startDate! , endDate:endDate! )
+   
+            }
+            else
+            {
+                cellView.textField?.stringValue = ""
+            }
             
                 return cellView
             
@@ -200,3 +213,5 @@ open class eventTable: NSObject , NSTableViewDataSource,NSTableViewDelegate{
     }
 
 }
+
+
