@@ -29,7 +29,7 @@
 	<key>NSCalendarsUsageDescription</key>
 	<string>Calender events required.</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2017 nidhi. All rights reserved.</string>
+	<string>Copyright © 2017 Eugene Bondar. All rights reserved.</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>

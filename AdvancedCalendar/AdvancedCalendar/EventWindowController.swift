@@ -138,7 +138,8 @@ class EventWindowController: NSWindowController, NSTableViewDelegate ,NSTableVie
     func setWindowPosRelativeToFrame(_ CalendarWindowFrame : NSRect)
     //func setWindowPosRelativeToFrame(CalendarWindowFrameOrigin : NSPoint)
     {
-      let windowTopLeftPosition = CGPoint(x: (CalendarWindowFrame.minX) - 100  , y: CalendarWindowFrame.maxY-20);
+      let windowTopLeftPosition = CGPoint(x: (CalendarWindowFrame.minX)   , y: CalendarWindowFrame.maxY-13);
+//        let windowTopLeftPosition = CGPoint(x: (CalendarWindowFrame.minX) - 100  , y: CalendarWindowFrame.maxY-20);
         
        eventDetailsWindowOutlet.setFrameTopLeftPoint(windowTopLeftPosition)
        // eventDetailsWindowOutlet.setFrameTopLeftPoint(CalendarWindowFrameOrigin)
@@ -185,7 +186,7 @@ class EventWindowController: NSWindowController, NSTableViewDelegate ,NSTableVie
             context.duration = 0.1
             //self.ScrollView1.animator().constant = //negative width of scroll view
             //self.ScrollView2.animator().constant = 0
-            self.eventDetailsWindowOutlet!.animator().setFrame(self.eventDetailsWindowOutlet!.frame.offsetBy(dx: -self.eventDetailsWindowOutlet.frame.size.width - 130, dy: 0), display: true);
+            self.eventDetailsWindowOutlet!.animator().setFrame(self.eventDetailsWindowOutlet!.frame.offsetBy(dx: -self.eventDetailsWindowOutlet.frame.size.width , dy: 0), display: true);
             }, completionHandler: { () -> Void in
                 //insert any finalizing actions here
                 print("Animation Done")

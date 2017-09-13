@@ -292,7 +292,7 @@ class CreateEvent: NSWindowController  , NSComboBoxDelegate  {
         
         if( repeatOutlet.stringValue == "Daily")
         {
-            newEvent.recurrenceRules?.append(EKRecurrenceRule(recurrenceWith: .daily, interval: 1, daysOfTheWeek: nil, daysOfTheMonth: nil, monthsOfTheYear: nil, weeksOfTheYear: nil, daysOfTheYear: nil, setPositions: nil, end: nil))
+            newEvent.addRecurrenceRule(EKRecurrenceRule(recurrenceWith: .daily, interval: 1, daysOfTheWeek: nil, daysOfTheMonth: nil, monthsOfTheYear: nil, weeksOfTheYear: nil, daysOfTheYear: nil, setPositions: nil, end: nil))
             
         }
         else if (repeatOutlet.stringValue == "Weekly" ){

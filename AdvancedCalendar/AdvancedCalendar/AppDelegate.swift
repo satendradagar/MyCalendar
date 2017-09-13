@@ -106,7 +106,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func updateTopbar()  {
         let dateFormatter: DateFormatter = DateFormatter()
-       
+        dateFormatter.locale = NSLocale.init(localeIdentifier: "en_US_POSIX") as Locale!;
         print(PreferencesStore.sharedInstance.yearFormat)
         print(PreferencesStore.sharedInstance.monthFormat)
         print(PreferencesStore.sharedInstance.weekDayFormat)
@@ -350,7 +350,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         createEventWindowController.window?.setFrameTopLeftPoint(windowTopLeftPosition);
         createEventWindowController.window?.makeKeyAndOrderFront(sender)
         createEventWindowController.showWindow(sender)
-        
+        NSApp.activate(ignoringOtherApps: true)
+
     }
     
     
@@ -371,6 +372,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         createEventWindowController.window?.setFrameTopLeftPoint(windowTopLeftPosition);
         createEventWindowController.window?.makeKeyAndOrderFront(sender)
         createEventWindowController.showWindow(sender)
+        NSApp.activate(ignoringOtherApps: true)
+
     }
 
     
@@ -383,8 +386,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //            if(dateReact.size.width == 0) {
 //                dateReact = buttonRect
 //            }
-            popover.show(relativeTo: dateReact, of: button, preferredEdge: NSRectEdge.minY )
-            
+        
+            popover.show(relativeTo: dateReact, of: button, preferredEdge: NSRectEdge.minY)
+//            popover.positioningRect = (popover.contentViewController?.view.frame)!
+
             /// no closing calendar window when user click outside popover.
             if (popoverkey == 1) {
                 popover.behavior = .transient
@@ -464,18 +469,57 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWorkspace.shared().openFile("/Applications/Calendar.app")
     }
     
-    @IBAction func pinCalendar(_ sender: AnyObject) {
-        popoverkey = 2 
-        
+    @IBAction func pinCalendar(_ sender: NSMenuItem) {
+
+        if 1 == popoverkey {
+            sender.title = "Unpin Calendar"
+            popoverkey = 2
+        }
+        else{
+            popoverkey = 1
+            sender.title = "Pin Calendar"
+
+        }
     }
     
     
     @IBAction func showPreferences(_ sender: AnyObject) {
         preferencesWindowController.window?.makeKeyAndOrderFront(sender)
         preferencesWindowController.showWindow(sender)
+        NSApp.activate(ignoringOtherApps: true)
+
     }
 
     @IBAction func showAboutWindow(_ sender: AnyObject) {
+        
+        let infoPath = "\(Bundle.main.bundlePath)/Contents/Info.plist"
+        //load the plist as data in memory
+        guard let plistData = FileManager.default.contents(atPath: infoPath) else { return }
+        //use the format of a property list (xml)
+        var format = PropertyListSerialization.PropertyListFormat.xml
+        //convert the plist data to a Swift Dictionary
+        guard let  plistDict = try! PropertyListSerialization.propertyList(from: plistData, options: .mutableContainersAndLeaves, format: &format) as? [String : AnyObject] else { return }
+        //access the values in the dictionary
+        if let value = plistDict["aKey"] as? String {
+            //do something with your value
+            print(value)
+        }
+        let versionNumber = plistDict["CFBundleShortVersionString"]
+        let prodName = plistDict["CFBundleName"]
+        let copyRight = plistDict["NSHumanReadableCopyright"]
+//        let  html = "<html><body><a href=\"http://www.macwareinc.com\">http://www.macwareinc.com</a><body></html>";
+//        let data = html.data(using: String.Encoding.ascii)
+//         let credits = try! NSAttributedString(data: data!, options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil)
+        var aboutPanelDict = [String:Any]()
+        aboutPanelDict["ApplicationName"] = prodName
+        aboutPanelDict["Version"] = versionNumber
+        aboutPanelDict["Copyright"] = copyRight
+//        aboutPanelDict["Credits"] = credits
+        NSApp.orderFrontStandardAboutPanel(options: aboutPanelDict)
+        NSApp.activate(ignoringOtherApps: true)
+//        [NSApp orderFrontStandardAboutPanelWithOptions:aboutPanelDict];
+//        [NSApp activateIgnoringOtherApps:YES];
+        
     }
     
     

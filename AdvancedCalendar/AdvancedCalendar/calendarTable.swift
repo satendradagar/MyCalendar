@@ -61,7 +61,7 @@ class calendarTable:  NSObject, NSTableViewDataSource,NSTableViewDelegate {
         let months = dateFormatter.monthSymbols
         let monthSymbol = months?[calendarDataInstance.selectedMonth-1]
         
-        monthLabel.stringValue = monthSymbol! + " , " + "\(calendarDataInstance.selectedYear)"
+        monthLabel.stringValue = monthSymbol! + ", " + "\(calendarDataInstance.selectedYear)"
         
         return  WEEK_ROWS_IN_CALENDAR
     
@@ -341,7 +341,7 @@ class calendarTable:  NSObject, NSTableViewDataSource,NSTableViewDelegate {
         let monthSymbol = months?[calendarDataInstance.selectedMonth-1] // month - from your date components
         
         
-        monthLabel.stringValue = monthSymbol! + " , " + "\(calendarDataInstance.selectedYear)"
+        monthLabel.stringValue = monthSymbol! + ", " + "\(calendarDataInstance.selectedYear)"
         
 
     }
@@ -357,7 +357,7 @@ class calendarTable:  NSObject, NSTableViewDataSource,NSTableViewDelegate {
         let monthSymbol = months?[calendarDataInstance.selectedMonth-1] // month - from your date components
         
         
-        monthLabel.stringValue = monthSymbol! + " , " + "\(calendarDataInstance.selectedYear)"
+        monthLabel.stringValue = monthSymbol! + ", " + "\(calendarDataInstance.selectedYear)"
         
     }
 }

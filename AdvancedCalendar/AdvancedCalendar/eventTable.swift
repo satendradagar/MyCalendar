@@ -153,7 +153,7 @@ open class eventTable: NSObject , NSTableViewDataSource,NSTableViewDelegate{
         
         
         let components =  durationComponents(startDate, endDate: endDate)
-        
+        var isLongDuration = true
         // 7th June
         
         if (components.year! > 0 )
@@ -163,7 +163,8 @@ open class eventTable: NSObject , NSTableViewDataSource,NSTableViewDelegate{
             var yearString : NSString = ""
             year = components.year!
             yearString = String(year) as NSString
-            duration = duration + "\(String(yearString)) year"
+            duration = duration + "\(String(yearString))y "
+//            isLongDuration = true
         }
         
         if (components.month! > 0 )
@@ -173,7 +174,8 @@ open class eventTable: NSObject , NSTableViewDataSource,NSTableViewDelegate{
             var monthString : NSString = ""
             month = components.month!
             monthString = String(month) as NSString
-            duration = duration + "\(String(monthString)) month"
+            duration = duration + "\(String(monthString))m "
+//            isLongDuration = true
         }
         
         if (components.day! > 0 )
@@ -183,10 +185,13 @@ open class eventTable: NSObject , NSTableViewDataSource,NSTableViewDelegate{
 //            duration =  "\(String(describing: components.day)) day"
             
             day = components.day!
+            var suffix = "day"
+            if isLongDuration == true {
+                suffix = "d "
+            }
             daystring = String(day) as NSString
-            duration = duration + "\(String(daystring)) day"
-          
-            
+            duration = duration + "\(String(daystring))\(suffix)"
+        
         }
 
         if (components.hour! > 0 )
@@ -195,8 +200,13 @@ open class eventTable: NSObject , NSTableViewDataSource,NSTableViewDelegate{
             var hour : NSInteger = 0
             var hourString :NSString = " "
             hour = components.hour!
+            
+            var suffix = "hour"
+            if isLongDuration == true {
+                suffix = "h "
+            }
             hourString = String(hour) as NSString
-            duration = duration + "\(String(hourString)) hour"
+            duration = duration + "\(String(hourString))\(suffix)"
         }
         
         if (components.minute! > 0 )
@@ -205,8 +215,13 @@ open class eventTable: NSObject , NSTableViewDataSource,NSTableViewDelegate{
             var minute : NSInteger = 0
             var minuteString : NSString = ""
             minute = components.minute!
+            
+            var suffix = "minute"
+            if isLongDuration == true {
+                suffix = "m "
+            }
             minuteString = String(minute) as NSString
-            duration = duration + "\(String(minuteString)) minute"
+            duration = duration + "\(String(minuteString))\(suffix)"
         }
 
         return duration

@@ -75,6 +75,11 @@
                                 </buttonCell>
                                 <connections>
                                     <binding destination="-2" name="value" keyPath="self.allDayEvent" id="QwI-Pb-mfx"/>
+                                    <binding destination="-2" name="enabled" keyPath="self.reminderEvent" id="cLe-Ib-ocz">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XhM-Xf-3Yq">
@@ -86,6 +91,11 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="remiderSelectionDidChanged:" target="-2" id="06O-mD-cf7"/>
+                                    <binding destination="-2" name="enabled" keyPath="self.allDayEvent" id="IAd-L5-3GQ">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                        </dictionary>
+                                    </binding>
                                     <binding destination="-2" name="value" keyPath="self.reminderEvent" id="sIT-2O-uXg"/>
                                 </connections>
                             </button>
@@ -118,21 +128,15 @@
                                     <datePickerElements key="datePickerElements" year="YES" month="YES" day="YES" hour="YES" minute="YES"/>
                                 </datePickerCell>
                                 <connections>
-                                    <binding destination="-2" name="hidden" keyPath="self.reminderEvent" previousBinding="PRJ-4j-EZh" id="8Cu-Bm-CQl"/>
-                                    <binding destination="-2" name="enabled" keyPath="self.allDayEvent" id="9gy-NS-I9g">
-                                        <dictionary key="options">
-                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
-                                        </dictionary>
-                                    </binding>
-                                    <binding destination="-2" name="enabled2" keyPath="self.reminderEvent" previousBinding="9gy-NS-I9g" id="PRJ-4j-EZh">
+                                    <binding destination="-2" name="hidden2" keyPath="self.reminderEvent" previousBinding="tdR-Yv-QBO" id="CY7-Sz-mSY">
                                         <dictionary key="options">
                                             <integer key="NSMultipleValuesPlaceholder" value="-1"/>
                                             <integer key="NSNoSelectionPlaceholder" value="-1"/>
                                             <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                             <integer key="NSNullPlaceholder" value="-1"/>
-                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
                                         </dictionary>
                                     </binding>
+                                    <binding destination="-2" name="hidden" keyPath="self.allDayEvent" id="tdR-Yv-QBO"/>
                                 </connections>
                             </datePicker>
                             <comboBox identifier="repeatComboBox" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yx9-0j-pmA">
@@ -155,6 +159,13 @@
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </comboBoxCell>
+                                <connections>
+                                    <binding destination="-2" name="enabled" keyPath="self.reminderEvent" id="Nwn-4R-qH5">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
                             </comboBox>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4f2-oc-Oz9">
                                 <rect key="frame" x="36" y="210" width="78" height="17"/>
@@ -177,7 +188,15 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <binding destination="-2" name="hidden" keyPath="self.reminderEvent" id="xzD-Xh-qtu"/>
+                                    <binding destination="-2" name="hidden2" keyPath="self.reminderEvent" previousBinding="EJX-im-AxV" id="gsy-71-uZ0">
+                                        <dictionary key="options">
+                                            <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                            <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                            <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                            <integer key="NSNullPlaceholder" value="-1"/>
+                                        </dictionary>
+                                    </binding>
+                                    <binding destination="-2" name="hidden" keyPath="self.allDayEvent" id="EJX-im-AxV"/>
                                 </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFi-vl-1gj">
@@ -197,6 +216,13 @@
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <binding destination="-2" name="enabled" keyPath="self.reminderEvent" id="QpV-fD-h1n">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vky-Qh-XB6">
                                 <rect key="frame" x="157" y="39" width="112" height="32"/>

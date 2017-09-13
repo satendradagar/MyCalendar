@@ -314,8 +314,8 @@ class PreferencesStore: NSObject {
     func savetopBarFormat()
     {
         self.defaults.set(self.topBarFormat, forKey: "topBarFormat")
-//        let appDalegate = NSApplication.shared().delegate as! AppDelegate
-//        appDalegate.updateTopbar()
+        let appDalegate = NSApplication.shared().delegate as! AppDelegate
+        appDalegate.updateTopbar()
     }
     
     func saveYearFormat()
@@ -339,11 +339,15 @@ class PreferencesStore: NSObject {
     func saveTimeFormat()
     {
         self.defaults.set(self.TimeFormat, forKey: "TimeFormat")
+        saveDefaultsAndUpdatedToolBarTitle()
+
     }
     func saveDayFormat()
     
     {
         self.defaults.set(self.dayFormat, forKey: "dayFormat")
+        saveDefaultsAndUpdatedToolBarTitle()
+
     }
     
     func saveDisableKey1()
@@ -451,5 +455,13 @@ class PreferencesStore: NSObject {
     {
         self.defaults.set(self.stateKey_ShowSecond, forKey: "stateKey_ShowSecond")
     }
+    
+    func saveDefaultsAndUpdatedToolBarTitle() {
+        self.defaults.synchronize()
+        let appDalegate = NSApplication.shared().delegate as! AppDelegate
+        appDalegate.updateTopbar()
+        
+    }
    
    }
+   
