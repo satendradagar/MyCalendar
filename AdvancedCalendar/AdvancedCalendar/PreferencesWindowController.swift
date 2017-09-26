@@ -64,7 +64,7 @@ class PreferencesWindowController: NSWindowController {
     
     override func windowDidLoad() {
         super.windowDidLoad()
-        
+        setIntialDefaultValues()
         // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
         self.yearSettingView.isHidden = true
         self.monthSettingView.isHidden = true
@@ -277,6 +277,25 @@ class PreferencesWindowController: NSWindowController {
         
         
     }
+    
+    func setIntialDefaultValues() {
+        let isDefaultSet = "Deafult_IS_SET"
+        let defaults = UserDefaults.standard
+        let isIntialised = defaults.integer(forKey: isDefaultSet)
+        if isIntialised != 1 {
+            defaults.set(1, forKey: isDefaultSet)
+            
+            defaults.set(1, forKey: "stateKey_24Hours")
+            defaults.set(1, forKey: "stateKey_FourDigit")
+            defaults.set(1, forKey: "stateKey_ThreeLetter")
+            
+            defaults.set(1, forKey: "stateKey_MonthDayYear")
+            defaults.set(1, forKey: "stateKey_3Letter")
+            defaults.set(1, forKey: "stateKey_Space")
+           defaults.synchronize()
+        }
+    }
+    
     var key :NSString = ""
 
 

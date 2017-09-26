@@ -51,7 +51,9 @@ class CreateEvent: NSWindowController  , NSComboBoxDelegate  {
         
         for case let cal as EKCalendar in calendars {
             let item : NSString = cal.title as NSString
+            if(item.isEqual(to: "Home") || item.isEqual(to: "Work")){
            calendarOutlet.addItem(withObjectValue: item)
+            }
         }
         calendarOutlet.stringValue = eventStore.defaultCalendarForNewEvents.title
         
@@ -84,8 +86,8 @@ class CreateEvent: NSWindowController  , NSComboBoxDelegate  {
 //        }
     }
     
-    func SetDate() -> Void {
-        let startDate = Date()
+    func SetDate(_ date:Date = Date()) -> Void {
+        let startDate = date
         var calendar = NSCalendar.current,
             components = calendar.dateComponents([.day,.month,.year], from: startDate)
         components.hour = 0
@@ -436,17 +438,27 @@ class CreateEvent: NSWindowController  , NSComboBoxDelegate  {
             calendars = eventStore.calendars(for: EKEntityType.reminder) as NSArray
             calendarOutlet.stringValue = eventStore.defaultCalendarForNewReminders().title
             startTitle = "Due At"
+            for case let cal as EKCalendar in calendars! {
+                let item : NSString = cal.title as NSString
+                calendarOutlet.addItem(withObjectValue: item)
+            }
         }
         else{
             calendars = eventStore.calendars(for: EKEntityType.event) as NSArray
             calendarOutlet.stringValue = eventStore.defaultCalendarForNewEvents.title
             startTitle = "Starts"
+            for case let cal as EKCalendar in calendars! {
+                let item : NSString = cal.title as NSString
+                if(item.isEqual(to: "Home") || item.isEqual(to: "Work")){
+                    calendarOutlet.addItem(withObjectValue: item)
+                }
+            }
         }
         
-        for case let cal as EKCalendar in calendars! {
-            let item : NSString = cal.title as NSString
-            calendarOutlet.addItem(withObjectValue: item)
-        }
+//        for case let cal as EKCalendar in calendars! {
+//            let item : NSString = cal.title as NSString
+//            calendarOutlet.addItem(withObjectValue: item)
+//        }
 
     }
 

@@ -353,10 +353,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSApp.activate(ignoringOtherApps: true)
 
     }
-    
-    
-    
-    
+        
     
     @IBAction func menuOptionNewEvent(_ sender: AnyObject) {
        

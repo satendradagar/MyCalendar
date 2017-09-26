@@ -12,7 +12,8 @@ class calendarCellView: NSTableCellView {
 
     override func draw(_ dirtyRect: NSRect) {
        
-
+        let button = NSActionCell()
+//        button.cell
         // Drawing code here.
         // 7th June
         _ = NSColor(red: 1.0, green: 1.0, blue:1.0, alpha: 1.0)

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -78,7 +78,7 @@
                                                 <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="EEZ-Tg-MS6">
                                                     <rect key="frame" x="24" y="99" width="430" height="5"/>
                                                 </box>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ln-Gw-GBy">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3ln-Gw-GBy">
                                                     <rect key="frame" x="21" y="186" width="70" height="17"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Calendar:" id="ZMG-yb-zKM">
                                                         <font key="font" metaFont="system"/>
@@ -86,7 +86,7 @@
                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8X9-eE-g97">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8X9-eE-g97">
                                                     <rect key="frame" x="21" y="76" width="68" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="64" id="xa3-WK-WD2"/>
@@ -97,7 +97,7 @@
                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xy4-d9-5MN">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Xy4-d9-5MN">
                                                     <rect key="frame" x="23" y="226" width="4" height="17"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="0nK-av-FOH">
                                                         <font key="font" metaFont="system"/>
@@ -105,7 +105,7 @@
                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQ8-Ni-ey0">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IQ8-Ni-ey0">
                                                     <rect key="frame" x="23" y="155" width="141" height="17"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="First day of the week:" id="8Uo-q7-ESQ">
                                                         <font key="font" metaFont="system"/>
@@ -113,7 +113,7 @@
                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Pf-PY-dNk">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8Pf-PY-dNk">
                                                     <rect key="frame" x="23" y="126" width="141" height="17"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Highlight days:" id="CQr-69-BWh">
                                                         <font key="font" metaFont="system"/>
@@ -121,7 +121,7 @@
                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <comboBox verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5Z-FT-SRN">
+                                                <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="o5Z-FT-SRN">
                                                     <rect key="frame" x="170" y="150" width="121" height="26"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="118" id="2gr-St-z7J"/>
@@ -162,7 +162,7 @@
                                                         <action selector="highlightDaysChanged:" target="-2" id="SfO-ZB-a6E"/>
                                                     </connections>
                                                 </segmentedControl>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBE-mW-pgz">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bBE-mW-pgz">
                                                     <rect key="frame" x="21" y="17" width="141" height="17"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Time format:" id="NcK-Va-Opx">
                                                         <font key="font" metaFont="system"/>
@@ -170,7 +170,7 @@
                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <comboBox verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPi-cw-Xz0">
+                                                <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bPi-cw-Xz0">
                                                     <rect key="frame" x="170" y="13" width="121" height="26"/>
                                                     <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="ciM-HR-2a2">
                                                         <font key="font" metaFont="system"/>
@@ -185,7 +185,7 @@
                                                         <action selector="agendaTimeFormatChanged:" target="-2" id="DmV-DD-itq"/>
                                                     </connections>
                                                 </comboBox>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTw-LY-QrU">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tTw-LY-QrU">
                                                     <rect key="frame" x="21" y="45" width="97" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="93" id="nKX-iV-i1m"/>
@@ -196,7 +196,7 @@
                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <comboBox verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNv-yc-yoB">
+                                                <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gNv-yc-yoB">
                                                     <rect key="frame" x="170" y="41" width="121" height="26"/>
                                                     <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="B2t-jh-6Ju">
                                                         <font key="font" metaFont="system"/>
@@ -211,7 +211,7 @@
                                                         <action selector="agendaHeaderFormatChanged:" target="-2" id="YjE-pn-zju"/>
                                                     </connections>
                                                 </comboBox>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyf-KJ-ajT">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cyf-KJ-ajT">
                                                     <rect key="frame" x="21" y="259" width="70" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="66" id="9Kp-Rr-XW5"/>
@@ -693,7 +693,7 @@
             <rect key="frame" x="0.0" y="0.0" width="163" height="185"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQe-wL-dF9">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GQe-wL-dF9">
                     <rect key="frame" x="97" y="135" width="33" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Date" id="e02-qh-CN9">
@@ -709,7 +709,7 @@
             <rect key="frame" x="0.0" y="0.0" width="163" height="96"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOV-5l-9GX">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iOV-5l-9GX">
                     <rect key="frame" x="57" y="47" width="34" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Time" id="boB-pU-izY">

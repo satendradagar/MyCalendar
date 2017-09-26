@@ -63,6 +63,8 @@
 		3FCDE57B1F3BA6F100D3C7C0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FCDE5791F3BA6F100D3C7C0 /* MainMenu.xib */; };
 		3FCDE57F1F3BA84000D3C7C0 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCDE57E1F3BA84000D3C7C0 /* ServiceManagement.framework */; };
 		3FCDE5811F3BA84600D3C7C0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCDE5801F3BA84600D3C7C0 /* Cocoa.framework */; };
+		EA0FE8D71F7A08D600582D53 /* Lilius App Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = EA0FE8D51F7A04A600582D53 /* Lilius App Icon.icns */; };
+		EA15C0A41F77AA8E000BA9D2 /* DoubleClickButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA15C0A31F77AA8E000BA9D2 /* DoubleClickButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -140,6 +142,8 @@
 		3FCDE57A1F3BA6F100D3C7C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		3FCDE57E1F3BA84000D3C7C0 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		3FCDE5801F3BA84600D3C7C0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		EA0FE8D51F7A04A600582D53 /* Lilius App Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Lilius App Icon.icns"; sourceTree = "<group>"; };
+		EA15C0A31F77AA8E000BA9D2 /* DoubleClickButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleClickButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				3FCDE5781F3BA5C500D3C7C0 /* AdvancedCalendar.entitlements */,
+				EA0FE8D51F7A04A600582D53 /* Lilius App Icon.icns */,
 				3FCDE5211F3BA56B00D3C7C0 /* Arrow left 50.png */,
 				3FCDE5221F3BA56B00D3C7C0 /* Arrow left 55.png */,
 				3FCDE5231F3BA56B00D3C7C0 /* Arrow left 60.png */,
@@ -226,6 +231,7 @@
 				3FA457E31F3BAADB007D8607 /* SelectedDatePoint_7px.png */,
 				3FCDE5381F3BA56B00D3C7C0 /* DatenTimeSettingsBrowser.swift */,
 				3FCDE5391F3BA56B00D3C7C0 /* eventTable.swift */,
+				EA15C0A31F77AA8E000BA9D2 /* DoubleClickButton.swift */,
 				3FCDE53A1F3BA56B00D3C7C0 /* EventWindowController.swift */,
 				3FCDE53B1F3BA56B00D3C7C0 /* EventWindowController.xib */,
 				3FCDE53C1F3BA56B00D3C7C0 /* File.swift */,
@@ -381,6 +387,7 @@
 				3FCDE56B1F3BA56B00D3C7C0 /* MacOsCalendar55.png in Resources */,
 				3FCDE5521F3BA56B00D3C7C0 /* Arrow right 60.png in Resources */,
 				3FCDE5611F3BA56B00D3C7C0 /* currentDateCircle_55px.png in Resources */,
+				EA0FE8D71F7A08D600582D53 /* Lilius App Icon.icns in Resources */,
 				3FCDE55F1F3BA56B00D3C7C0 /* CreateEvent.xib in Resources */,
 				3FCDE5501F3BA56B00D3C7C0 /* Arrow right 50.png in Resources */,
 				3FCDE56C1F3BA56B00D3C7C0 /* MacOsCalendar60.png in Resources */,
@@ -413,6 +420,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA15C0A41F77AA8E000BA9D2 /* DoubleClickButton.swift in Sources */,
 				3FCDE5551F3BA56B00D3C7C0 /* ButtonStyle.swift in Sources */,
 				3FCDE5671F3BA56B00D3C7C0 /* File.swift in Sources */,
 				3FCDE5631F3BA56B00D3C7C0 /* DatenTimeSettingsBrowser.swift in Sources */,
@@ -587,7 +595,6 @@
 		3FCDE51F1F3BA4D000D3C7C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AdvancedCalendar/AdvancedCalendar.entitlements;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -604,7 +611,6 @@
 		3FCDE5201F3BA4D000D3C7C0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AdvancedCalendar/AdvancedCalendar.entitlements;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;

@@ -111,10 +111,11 @@ class calendarTable:  NSObject, NSTableViewDataSource,NSTableViewDelegate {
                 }
             }
             
-            for case let button as NSButton in cellView.subviews {
+            for case let button as DoubleActionButton in cellView.subviews {
                 button.image = NSImage(named: "whiteTableCell45.png")
                 button.identifier =  "\(row)" + "-" + "\(indexOfColumn!)"
-                
+                button.doubleAction = #selector(doubleClickedOnCell)
+
                 
                 
                 if(numberOfEventsOnThisDay > 0)
@@ -163,7 +164,7 @@ class calendarTable:  NSObject, NSTableViewDataSource,NSTableViewDelegate {
 //                             CGRectMake(button.frame.minX ,button.frame.minY ,button.frame.minX + 50,button.frame.minY - 60);
 //                           
                            
-                            iconImage.image = NSImage.init(named: "Event_Point_4px.png")
+                            iconImage.image = NSImage.init(named: "Event Point")
                             
                             iconImage.frame = CGRect(x: x  , y: y , width: imageSideLenFloat  ,height: imageSideLenFloat );
                           //  iconImage.alignmentRectForFrame(iconImage.frame)
@@ -186,8 +187,9 @@ class calendarTable:  NSObject, NSTableViewDataSource,NSTableViewDelegate {
         }
         else{
             cellView = tableView.make(withIdentifier: "day", owner: self) as! NSTableCellView
-            for case let button as NSButton in cellView.subviews {
+            for case let button as DoubleActionButton in cellView.subviews {
                 button.identifier =  "\(day)" + "-" + "\(month)"
+                button.doubleAction = #selector(doubleClickedOnCell)
                 //   button.title = "\(day)"
             }
         }
@@ -228,14 +230,21 @@ class calendarTable:  NSObject, NSTableViewDataSource,NSTableViewDelegate {
         // get title from the label at column number
     
     }
-    
+
+    func doubleClickedOnCell( _ button : DoubleActionButton){
+        print("------Double:\(button.identifier!)")
+        calendarButtonDoubleClicked(button)
+        // get title from the label at column number
+        
+    }
     @IBAction func onEmptyDateClicked(_ sender: Any) {
-        let button = sender as! NSButton
-        currSelCellView = button.superview as? NSTableCellView
-        let appDel = NSApplication.shared().delegate as! AppDelegate;
-        appDel.createEvent(sender as AnyObject);
-        
-        
+        return;//Fixed in submilestone 2
+//        let button = sender as! NSButton
+//        currSelCellView = button.superview as? NSTableCellView
+//        let appDel = NSApplication.shared().delegate as! AppDelegate;
+//        appDel.createEvent(sender as AnyObject);
+//
+//
     }
     
     @IBAction func calendarButtonClicked(_ sender: AnyObject) {
@@ -310,7 +319,7 @@ class calendarTable:  NSObject, NSTableViewDataSource,NSTableViewDelegate {
                 
                 
                 iconImage.identifier = "selectionIcon"
-                iconImage.image = NSImage.init(named: "SelectedDatePoint_5px.png")
+                iconImage.image = NSImage.init(named: "SelectedDateBluePoint")
                 
                 iconImage.frame = CGRect(x: x  , y: y , width: 5  ,height: 5 );
             
@@ -331,6 +340,44 @@ class calendarTable:  NSObject, NSTableViewDataSource,NSTableViewDelegate {
         }
         
     }
+    @IBAction func calendarButtonDoubleClicked(_ sender: AnyObject) {
+        let button = sender as! NSButton
+
+//        var iden = CalendarData.sharedInstance.userSelectedDateIdentifier
+        var iden = button.identifier!
+        var indexes = iden.characters.split{$0 == "-"}.map(String.init)
+        let calendarRow = Int(indexes[0])!
+        let calendarCol = Int(indexes[1])!
+
+        let calCell = CalendarData.sharedInstance.selectedMonthCalArray[calendarRow][calendarCol]
+
+        var components = DateComponents()
+        components.day = calCell.day
+        components.month = calCell.month
+        components.year = calCell.year
+
+        let date : Date = Calendar.current.date(from: components)!
+        
+        let eventFrame = NSApp.currentEvent!.window!.frame
+        let eventOrigin = eventFrame.origin;
+        let eventSize = eventFrame.size;
+        
+        // Calculate the position of the window to
+        // place it centered below
+        let windowFrame = button.window!.frame;
+        let windowSize = windowFrame.size;
+        let windowTopLeftPosition = CGPoint(x: eventOrigin.x + eventSize.width/2.0 - windowSize.width/2.0, y: eventOrigin.y - 5);
+        
+        // Set position of the window and display it
+        let appDelegate = NSApplication.shared().delegate as! AppDelegate
+ appDelegate.createEventWindowController.window?.setFrameTopLeftPoint(windowTopLeftPosition);
+ appDelegate.createEventWindowController.window?.makeKeyAndOrderFront(sender)
+    appDelegate.createEventWindowController.showWindow(sender)
+        NSApp.activate(ignoringOtherApps: true)
+    appDelegate.createEventWindowController.SetDate(date)
+
+    }
+        
     @IBAction func showPreviousMonth(_ sender: AnyObject) {
         
         calendarDataInstance.showPreviousMonth(sender)
