@@ -132,6 +132,8 @@ class EventWindowController: NSWindowController, NSTableViewDelegate ,NSTableVie
     func setData( _ data : String)
     {
         eventDateLabelOutlet.stringValue = data as String
+        let height = adjustHeightForSelectedDate()
+        setWindowHeight(height)
          eventDataTableOutlet.reloadData()
     }
     
@@ -194,6 +196,54 @@ class EventWindowController: NSWindowController, NSTableViewDelegate ,NSTableVie
         
 
        
+    }
+    
+    func adjustHeightForSelectedDate() ->CGFloat {
+        var iden = calendarDataInstane.userSelectedDateIdentifier
+        var indexes = iden.characters.split{$0 == "-"}.map(String.init)
+       let calendarRow = Int(indexes[0])!
+       let calendarCol = Int(indexes[1])!
+        
+        let cells =  calendarDataInstane.selectedMonthCalArray[calendarRow][calendarCol].events.count
+        var totalHeight = cells*25
+        totalHeight += 99
+        return CGFloat(totalHeight)
+    }
+    
+    func setWindowHeight(_ height:CGFloat) -> Void {
+        
+//        var theAnim: NSViewAnimation ;
+        var firstViewFrame: NSRect;
+        var newViewFrame: NSRect;
+        
+//        let firstViewDict:NSMutableDictionary;
+//
+//        firstViewDict = NSMutableDictionary.init(capacity: 3);
+            firstViewFrame = self.eventDetailsWindowOutlet.frame;
+            let heightDiff =  height - firstViewFrame.size.height
+            newViewFrame = firstViewFrame;
+            
+            newViewFrame.size.height += heightDiff;
+            newViewFrame.origin.y -= heightDiff;
+            self.eventDetailsWindowOutlet.setFrame(newViewFrame, display: true, animate: false)
+            
+
+//        firstViewFrame = self.window?.frame;
+////        firstViewDict.setObject(window, forKey: NSViewAnimationTargetKey)
+////        firstViewDict.setObject(NSValue.init(rect: firstViewFrame), forKey: NSViewAnimationStartFrameKey as NSCopying)
+//        let heightDiff =  height - firstViewFrame.size.height
+//        newViewFrame = firstViewFrame;
+//
+//        newViewFrame.size.height += heightDiff;
+//        newViewFrame.origin.y -= heightDiff;
+//        self.window?.setFrame(newViewFrame, display: true, animate: true)
+//
+//        firstViewDict.setObject(NSValue.init(rect: newViewFrame), forKey: NSViewAnimationEndFrameKey as NSCopying);
+//
+//        theAnim = NSViewAnimation.init(viewAnimations: [firstViewDict as! Dictionary<String, Any>])
+//        theAnim.duration = 1.0;
+//        theAnim.start()
+
     }
     func closeWindow() {
         self.eventDetailsWindowOutlet!.orderOut(self)
