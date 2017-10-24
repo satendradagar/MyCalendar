@@ -226,7 +226,7 @@ class EventWindowController: NSWindowController, NSTableViewDelegate ,NSTableVie
             newViewFrame.size.height += heightDiff;
             newViewFrame.origin.y -= heightDiff;
             self.eventDetailsWindowOutlet.setFrame(newViewFrame, display: true, animate: false)
-            
+        
 
 //        firstViewFrame = self.window?.frame;
 ////        firstViewDict.setObject(window, forKey: NSViewAnimationTargetKey)

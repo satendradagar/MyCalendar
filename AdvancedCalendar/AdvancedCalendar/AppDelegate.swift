@@ -112,12 +112,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         print(PreferencesStore.sharedInstance.weekDayFormat)
         print(PreferencesStore.sharedInstance.delimiterFormat)
         print(PreferencesStore.sharedInstance.topBarFormat)
-        print(" timeformat @%",PreferencesStore.sharedInstance.includeSecond)
-        print("year disable key", PreferencesStore.sharedInstance.disableKey2)
-        print("month disable key", PreferencesStore.sharedInstance.disableKey3)
-        print("day disable key", PreferencesStore.sharedInstance.disableKey4)
-        print("weekday disable key", PreferencesStore.sharedInstance.disableKey5)
- 
+//        print(" timeformat @%",PreferencesStore.sharedInstance.includeSecond)
+//        print("year disable key", PreferencesStore.sharedInstance.disableKey2)
+//        print("month disable key", PreferencesStore.sharedInstance.disableKey3)
+//        print("day disable key", PreferencesStore.sharedInstance.disableKey4)
+//        print("weekday disable key", PreferencesStore.sharedInstance.disableKey5)
+//
         // big range 1
         
         var strTimeFormatter:String = ""

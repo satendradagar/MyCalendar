@@ -188,7 +188,9 @@ class calendarTable:  NSObject, NSTableViewDataSource,NSTableViewDelegate {
         else{
             cellView = tableView.make(withIdentifier: "day", owner: self) as! NSTableCellView
             for case let button as DoubleActionButton in cellView.subviews {
-                button.identifier =  "\(day)" + "-" + "\(month)"
+//                button.identifier =  "\(day)" + "-" + "\(month)"
+                button.identifier =  "\(row)" + "-" + "\(indexOfColumn!)"
+
                 button.doubleAction = #selector(doubleClickedOnCell)
                 //   button.title = "\(day)"
             }
