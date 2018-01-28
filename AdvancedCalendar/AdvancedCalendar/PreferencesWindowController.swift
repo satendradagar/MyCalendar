@@ -7,10 +7,12 @@
 //
 
 import Cocoa
+import Facebook_Mac_Core
 
 class PreferencesWindowController: NSWindowController {
     
     var prefStore = PreferencesStore.sharedInstance
+    var facebookLoginWindow: FacebookLoginWindowController?
     
     @IBOutlet weak var outletRunAtLogin: NSButton!
     @IBOutlet weak var outletFirstDayOfWeek: NSComboBox!
@@ -60,6 +62,8 @@ class PreferencesWindowController: NSWindowController {
     @IBOutlet var btn_24Hours: NSButton!
     @IBOutlet var btn_12Hours: NSButton!
     @IBOutlet var btn_ShowSecond: NSButton!
+    @IBOutlet var btn_FBlogin: NSButton!
+
  //   @IBOutlet weak var dateSettingBrowserOutlet: NSView!
     
     override func windowDidLoad() {
@@ -294,8 +298,20 @@ class PreferencesWindowController: NSWindowController {
             defaults.set(1, forKey: "stateKey_Space")
            defaults.synchronize()
         }
+        self.updateFBLoginButton()
     }
-    
+
+    func updateFBLoginButton()  {
+        let defaults = UserDefaults.standard
+        let isFBLogin = defaults.bool(forKey:"fbLogin")
+        if  isFBLogin == true {
+            btn_FBlogin.title = "Logout"
+        }
+        else{
+            btn_FBlogin.title = "Login"
+        }
+    }
+
     var key :NSString = ""
 
 
@@ -751,4 +767,58 @@ class PreferencesWindowController: NSWindowController {
         prefStore.saveStateKey_ShowSecond()
     }
    
+    @IBAction func didClickFacebookLogin(_ sender: NSButton) {
+        let defaults = UserDefaults.standard
+        if defaults.bool(forKey: "fbLogin") {
+            defaults.set(false, forKey: "fbLogin")
+            defaults.set("", forKey: "FB_Profile_Name")
+            self.updateFBLoginButton()
+            return;
+        }
+        facebookLoginWindow = FacebookLoginWindowController(windowNibName: "FacebookLoginWindowController")
+        facebookLoginWindow?.showLoginSheet(fromWindow: self.window!)
+        facebookLoginWindow?.completionHandler = {
+            accessToken, error in
+            if (nil == error){
+                
+                defaults.set(true, forKey: "fbLogin")
+                defaults.synchronize()
+
+                FacebookEventManager.requestEventUpdate(sender: nil)
+                self.updateUserProfileData()
+            }
+        }
+    }
+    
+    func updateUserProfileData()  {
+        let req = GraphRequest(graphPath: "me", parameters:[:], accessToken: AccessToken.current, httpMethod: GraphRequestHTTPMethod(rawValue: "GET")!)
+        req.start({ (connection, result) in
+            switch result {
+            case .failed(let error):
+                print(error)
+                
+            case .success(let graphResponse):
+                if let responseDictionary = graphResponse.dictionaryValue {
+                    print(responseDictionary)
+//                    let firstNameFB = responseDictionary["first_name"] as? String
+//                    let lastNameFB = responseDictionary["last_name"] as? String
+//                    let socialIdFB = responseDictionary["id"] as? String
+//                    let genderFB = responseDictionary["gender"] as? String
+                    let fbName = responseDictionary["name"] as? String
+
+//                    let pictureUrlFB = responseDictionary["picture"] as? [String:Any]
+//                    let photoData = pictureUrlFB!["data"] as? [String:Any]
+                    
+//                    let photoUrl = photoData!["url"] as? String
+//                    print(firstNameFB, lastNameFB, socialIdFB, genderFB, photoUrl)
+                    let defaults = UserDefaults.standard
+                    defaults.set(fbName, forKey: "FB_Profile_Name")
+                    defaults.synchronize()
+                    self.updateFBLoginButton()
+
+                }
+            }
+        })
+    }
 }
+

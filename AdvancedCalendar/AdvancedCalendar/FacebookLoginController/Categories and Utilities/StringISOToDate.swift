@@ -7,3 +7,21 @@
 //
 
 import Foundation
+
+let dateFormatter = String.ISO08601DateFormatter()
+
+extension String{
+    
+    func dateObject() -> Date? {
+        
+        let date = dateFormatter.date(from:self)
+        return date
+        
+    }
+    
+   static func ISO08601DateFormatter() -> DateFormatter {
+        let dateFmtter = DateFormatter()
+        dateFmtter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        return dateFmtter
+    }
+}

@@ -8,6 +8,7 @@
 
 import Cocoa
 import ServiceManagement
+import Facebook_Mac_Core
 
 let AppName : String = "NEW CALENDAR APP"
 let WEEK_ROWS_IN_CALENDAR : Int = 6
@@ -37,7 +38,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var dateReact = NSRect()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        
+        SDKSettings.autoLoginEnable = false
+        SDKApplicationDelegate.shared.applicationDidFinishLaunching(aNotification)
+
         statusItem.target = self
         statusItem.action = #selector(AppDelegate.togglePopover(_:))
         //        statusItem.title = statusBarTitleString()

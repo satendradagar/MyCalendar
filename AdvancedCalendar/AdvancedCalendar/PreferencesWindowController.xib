@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,6 +15,7 @@
                 <outlet property="btn_2letter" destination="bSs-KR-va8" id="gtA-K4-12c"/>
                 <outlet property="btn_3letter" destination="jG4-2q-wqn" id="voV-53-Lw5"/>
                 <outlet property="btn_Dot" destination="aYV-pz-Pd1" id="8v8-9F-Vhe"/>
+                <outlet property="btn_FBlogin" destination="nNQ-Qi-Xtc" id="8lc-7C-2Az"/>
                 <outlet property="btn_Fourdigits" destination="v1u-Wa-3GD" id="bjz-gC-kZK"/>
                 <outlet property="btn_FullName" destination="6sI-Ra-v1E" id="NvV-g1-oY1"/>
                 <outlet property="btn_MonthDayYear" destination="yUd-nH-HBj" id="vZL-bg-Ggf"/>
@@ -145,7 +146,7 @@
                                                     </connections>
                                                 </comboBox>
                                                 <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0Ro-Oz-nLx">
-                                                    <rect key="frame" x="168" y="123" width="222" height="24"/>
+                                                    <rect key="frame" x="168" y="123" width="221" height="24"/>
                                                     <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectAny" id="DBY-ds-Yg8">
                                                         <font key="font" metaFont="system"/>
                                                         <segments>
@@ -663,6 +664,52 @@
                                         <view key="view" id="hIu-e8-1fy">
                                             <rect key="frame" x="10" y="33" width="497" height="279"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <tabView fixedFrame="YES" initialItem="Grd-go-0F5" translatesAutoresizingMaskIntoConstraints="NO" id="vJk-ps-5Pm">
+                                                    <rect key="frame" x="2" y="-1" width="499" height="283"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                    <tabViewItems>
+                                                        <tabViewItem label="Facebook" identifier="" id="Grd-go-0F5">
+                                                            <view key="view" ambiguous="YES" id="Qlh-4X-5hF">
+                                                                <rect key="frame" x="10" y="33" width="479" height="237"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <subviews>
+                                                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nNQ-Qi-Xtc">
+                                                                        <rect key="frame" x="11" y="206" width="218" height="32"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <buttonCell key="cell" type="push" title="Login" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0RB-oT-jpg">
+                                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                        <connections>
+                                                                            <action selector="didClickFacebookLogin:" target="-2" id="QGN-a1-XdM"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NZU-5D-Sb0">
+                                                                        <rect key="frame" x="15" y="163" width="449" height="42"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" id="HtU-9S-zIj">
+                                                                            <font key="font" metaFont="system" size="16"/>
+                                                                            <color key="textColor" name="knobColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                        </textFieldCell>
+                                                                        <connections>
+                                                                            <binding destination="IwN-1F-iSh" name="value" keyPath="values.FB_Profile_Name" id="x2v-e0-sRP"/>
+                                                                        </connections>
+                                                                    </textField>
+                                                                </subviews>
+                                                            </view>
+                                                        </tabViewItem>
+                                                        <tabViewItem label="Google" identifier="" id="3hL-Re-Imu">
+                                                            <view key="view" id="8YC-He-P99">
+                                                                <rect key="frame" x="10" y="33" width="479" height="237"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            </view>
+                                                        </tabViewItem>
+                                                    </tabViewItems>
+                                                </tabView>
+                                            </subviews>
                                         </view>
                                     </tabViewItem>
                                 </tabViewItems>
@@ -686,7 +733,7 @@
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="500" y="388"/>
+            <point key="canvasLocation" x="651" y="265.5"/>
         </window>
         <customObject id="CrZ-ma-4yw" customClass="DatenTimeSettingsBrowser" customModule="AdvancedCalendar" customModuleProvider="target"/>
         <customView id="9Qh-YR-LdG">
@@ -722,5 +769,6 @@
             <point key="canvasLocation" x="500.5" y="690"/>
         </customView>
         <customObject id="mzh-xP-wra" customClass="PreferencesStore" customModule="AdvancedCalendar" customModuleProvider="target"/>
+        <userDefaultsController representsSharedInstance="YES" id="IwN-1F-iSh"/>
     </objects>
 </document>
