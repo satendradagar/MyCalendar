@@ -463,5 +463,6 @@ class PreferencesStore: NSObject {
         
     }
    
-   }
+}
    
+

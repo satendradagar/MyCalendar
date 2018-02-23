@@ -22,9 +22,12 @@ class FacebookEventManager: NSObject {
             case .success(let graphResponse):
                 if let responseDictionary = graphResponse.dictionaryValue {
 //                    print(responseDictionary)
+                    
                     if let eventData = responseDictionary["data"] as? [[String:Any]]{
                         
-                        FBEventStroreManger.sharedStore.updateEvents(eventsDict: eventData)
+                        DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async {
+                            FBEventStroreManger.sharedStore.updateEvents(eventsDict: eventData)
+                        }
                     
                     }
                     

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="RP6-Ij-evS">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Facebook Account-->
+        <scene sceneID="xCi-Hs-ISO">
+            <objects>
+                <viewController id="RP6-Ij-evS" customClass="FacebookAccount" customModule="AdvancedCalendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="KOg-sb-itH">
+                        <rect key="frame" x="0.0" y="0.0" width="452" height="235"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="240" verticalHuggingPriority="750" horizontalCompressionResistancePriority="350" verticalCompressionResistancePriority="350" translatesAutoresizingMaskIntoConstraints="NO" id="k1V-x5-VD7">
+                                <rect key="frame" x="18" y="153" width="416" height="19"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="imE-kp-bPW">
+                                    <font key="font" metaFont="system" size="16"/>
+                                    <color key="textColor" name="knobColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <binding destination="rx5-DD-Jt0" name="value" keyPath="values.FB_Profile_Name" id="pc6-jm-nuq"/>
+                                </connections>
+                            </textField>
+                            <textField horizontalHuggingPriority="240" verticalHuggingPriority="750" horizontalCompressionResistancePriority="350" verticalCompressionResistancePriority="350" translatesAutoresizingMaskIntoConstraints="NO" id="xsy-PV-FH5">
+                                <rect key="frame" x="18" y="194" width="416" height="21"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Facebook Account Details" id="bTO-QC-IDS">
+                                    <font key="font" metaFont="system" size="17"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="k1V-x5-VD7" firstAttribute="leading" secondItem="KOg-sb-itH" secondAttribute="leading" constant="20" id="1KJ-HD-9dT"/>
+                            <constraint firstItem="xsy-PV-FH5" firstAttribute="top" secondItem="KOg-sb-itH" secondAttribute="top" constant="20" id="9Eo-Wg-idE"/>
+                            <constraint firstAttribute="trailing" secondItem="k1V-x5-VD7" secondAttribute="trailing" constant="20" id="J2Y-Eo-yRY"/>
+                            <constraint firstItem="xsy-PV-FH5" firstAttribute="leading" secondItem="KOg-sb-itH" secondAttribute="leading" constant="20" id="Rtl-9W-Oqr"/>
+                            <constraint firstAttribute="trailing" secondItem="xsy-PV-FH5" secondAttribute="trailing" constant="20" id="eyR-4B-zn1"/>
+                            <constraint firstItem="k1V-x5-VD7" firstAttribute="top" secondItem="KOg-sb-itH" secondAttribute="top" constant="63" id="kIA-9F-6lP"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="PVZ-s5-TZd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="rx5-DD-Jt0"/>
+            </objects>
+            <point key="canvasLocation" x="33" y="258.5"/>
+        </scene>
+    </scenes>
+</document>

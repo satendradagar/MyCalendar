@@ -783,9 +783,11 @@ class PreferencesWindowController: NSWindowController {
                 
                 defaults.set(true, forKey: "fbLogin")
                 defaults.synchronize()
+                DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async {
+                    FacebookEventManager.requestEventUpdate(sender: nil)
+                    self.updateUserProfileData()
 
-                FacebookEventManager.requestEventUpdate(sender: nil)
-                self.updateUserProfileData()
+                }
             }
         }
     }

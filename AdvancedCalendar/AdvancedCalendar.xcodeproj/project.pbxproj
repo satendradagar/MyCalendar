@@ -66,7 +66,9 @@
 		9A2F52A11FE50DC70062E521 /* NSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F52A01FE50DC70062E521 /* NSUtilities.swift */; };
 		9A2F52B61FE52F9F0062E521 /* Facebook_Mac_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2F52B11FE52F680062E521 /* Facebook_Mac_Core.framework */; };
 		9A2F52B71FE52FA90062E521 /* Facebook_Mac_Core.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A2F52B11FE52F680062E521 /* Facebook_Mac_Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9A4397CA203E7D0900E45042 /* AccountDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4397C9203E7D0900E45042 /* AccountDetailsController.swift */; };
 		9A88C3F61FE97CC2009BB6DF /* StringISOToDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A88C3F51FE97CC2009BB6DF /* StringISOToDate.swift */; };
+		9AA37EC42036976500B23448 /* IntegrationTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA37EC32036976500B23448 /* IntegrationTabController.swift */; };
 		9ACE27D61FE3F63F0066C3C3 /* FacebookLoginWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ACE27D51FE3F63F0066C3C3 /* FacebookLoginWindowController.xib */; };
 		9ACE27D81FE3F66B0066C3C3 /* FacebookLoginWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACE27D71FE3F66B0066C3C3 /* FacebookLoginWindowController.swift */; };
 		9ACE27EA1FE40A490066C3C3 /* FacebookLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACE27E41FE40A490066C3C3 /* FacebookLoginController.swift */; };
@@ -89,6 +91,11 @@
 		9ADE7B7F1FF3F05900AE8885 /* FBSDKCoreKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9ADE7B7E1FF3F04D00AE8885 /* FBSDKCoreKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9ADE7B8A1FF3F3D000AE8885 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ADE7B8B1FF3F3D000AE8885 /* Bolts.framework */; };
 		9ADE7B8C1FF3F3D800AE8885 /* Bolts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9ADE7B8B1FF3F3D000AE8885 /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9AE4B0AC2033157F008D1B44 /* UserAccountsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE4B0A92033157E008D1B44 /* UserAccountsController.swift */; };
+		9AE4B0AD2033157F008D1B44 /* UserAccountsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AE4B0AA2033157E008D1B44 /* UserAccountsController.xib */; };
+		9AE4B0AF203316F3008D1B44 /* PreferenceAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE4B0AE203316F3008D1B44 /* PreferenceAccount.swift */; };
+		9AFE5E63203C8C29009B9989 /* FacebookAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AFE5E62203C8C29009B9989 /* FacebookAccount.storyboard */; };
+		9AFE5E65203C8D32009B9989 /* FacebookAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFE5E64203C8D32009B9989 /* FacebookAccount.swift */; };
 		EA0FE8D71F7A08D600582D53 /* Lilius App Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = EA0FE8D51F7A04A600582D53 /* Lilius App Icon.icns */; };
 		EA15C0A41F77AA8E000BA9D2 /* DoubleClickButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA15C0A31F77AA8E000BA9D2 /* DoubleClickButton.swift */; };
 /* End PBXBuildFile section */
@@ -206,7 +213,9 @@
 		3FCDE5801F3BA84600D3C7C0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		9A2F52A01FE50DC70062E521 /* NSUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUtilities.swift; sourceTree = "<group>"; };
 		9A2F52A61FE52F680062E521 /* Facebook Mac Core.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Facebook Mac Core.xcodeproj"; path = "../facebook-mac-login/Facebook Core and Login Swift/Facebook Mac Core/Facebook Mac Core/Facebook Mac Core.xcodeproj"; sourceTree = "<group>"; };
+		9A4397C9203E7D0900E45042 /* AccountDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsController.swift; sourceTree = "<group>"; };
 		9A88C3F51FE97CC2009BB6DF /* StringISOToDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringISOToDate.swift; sourceTree = "<group>"; };
+		9AA37EC32036976500B23448 /* IntegrationTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationTabController.swift; sourceTree = "<group>"; };
 		9ACE27D51FE3F63F0066C3C3 /* FacebookLoginWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FacebookLoginWindowController.xib; sourceTree = "<group>"; };
 		9ACE27D71FE3F66B0066C3C3 /* FacebookLoginWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLoginWindowController.swift; sourceTree = "<group>"; };
 		9ACE27E31FE40A490066C3C3 /* FacebookWebLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookWebLogin.h; sourceTree = "<group>"; };
@@ -228,6 +237,11 @@
 		9AD3B8091FE7DD0E00210976 /* FBEventStroreManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBEventStroreManger.swift; sourceTree = "<group>"; };
 		9ADE7B7E1FF3F04D00AE8885 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ADE7B8B1FF3F3D000AE8885 /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AE4B0A92033157E008D1B44 /* UserAccountsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountsController.swift; sourceTree = "<group>"; };
+		9AE4B0AA2033157E008D1B44 /* UserAccountsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserAccountsController.xib; sourceTree = "<group>"; };
+		9AE4B0AE203316F3008D1B44 /* PreferenceAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceAccount.swift; sourceTree = "<group>"; };
+		9AFE5E62203C8C29009B9989 /* FacebookAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FacebookAccount.storyboard; sourceTree = "<group>"; };
+		9AFE5E64203C8D32009B9989 /* FacebookAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAccount.swift; sourceTree = "<group>"; };
 		EA0FE8D51F7A04A600582D53 /* Lilius App Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Lilius App Icon.icns"; sourceTree = "<group>"; };
 		EA15C0A31F77AA8E000BA9D2 /* DoubleClickButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleClickButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -338,7 +352,9 @@
 				3FCDE5461F3BA56B00D3C7C0 /* PopUpWindowController.xib */,
 				3FCDE5471F3BA56B00D3C7C0 /* PreferencesStore.swift */,
 				3FCDE5481F3BA56B00D3C7C0 /* PreferencesWindowController.swift */,
+				9AA37EC32036976500B23448 /* IntegrationTabController.swift */,
 				3FCDE5491F3BA56B00D3C7C0 /* PreferencesWindowController.xib */,
+				9AE4B0A82033157E008D1B44 /* PreferencesController */,
 				3FCDE54A1F3BA56B00D3C7C0 /* RepeatComboBoxDelegate.swift */,
 				3FCDE54B1F3BA56B00D3C7C0 /* WhiteView.swift */,
 				3FCDE54C1F3BA56B00D3C7C0 /* windowDel.swift */,
@@ -420,6 +436,27 @@
 				9AD3B8091FE7DD0E00210976 /* FBEventStroreManger.swift */,
 			);
 			path = FacebookEventManager;
+			sourceTree = "<group>";
+		};
+		9AE4B0A82033157E008D1B44 /* PreferencesController */ = {
+			isa = PBXGroup;
+			children = (
+				9AFE5E60203C8B02009B9989 /* FacebookAccount */,
+				9AE4B0A92033157E008D1B44 /* UserAccountsController.swift */,
+				9AE4B0AA2033157E008D1B44 /* UserAccountsController.xib */,
+				9AE4B0AE203316F3008D1B44 /* PreferenceAccount.swift */,
+				9A4397C9203E7D0900E45042 /* AccountDetailsController.swift */,
+			);
+			path = PreferencesController;
+			sourceTree = "<group>";
+		};
+		9AFE5E60203C8B02009B9989 /* FacebookAccount */ = {
+			isa = PBXGroup;
+			children = (
+				9AFE5E62203C8C29009B9989 /* FacebookAccount.storyboard */,
+				9AFE5E64203C8D32009B9989 /* FacebookAccount.swift */,
+			);
+			path = FacebookAccount;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -556,6 +593,8 @@
 				3FCDE56E1F3BA56B00D3C7C0 /* Plus55.png in Resources */,
 				3FCDE55D1F3BA56B00D3C7C0 /* Cog Small60.png in Resources */,
 				3FA457E81F3BAADB007D8607 /* SelectedDatePoint_7px.png in Resources */,
+				9AE4B0AD2033157F008D1B44 /* UserAccountsController.xib in Resources */,
+				9AFE5E63203C8C29009B9989 /* FacebookAccount.storyboard in Resources */,
 				3FCDE56A1F3BA56B00D3C7C0 /* MacOsCalendar50.png in Resources */,
 				3FCDE54F1F3BA56B00D3C7C0 /* Arrow left 60.png in Resources */,
 				9ACE27D61FE3F63F0066C3C3 /* FacebookLoginWindowController.xib in Resources */,
@@ -607,6 +646,8 @@
 				9ACE27D81FE3F66B0066C3C3 /* FacebookLoginWindowController.swift in Sources */,
 				9ACE27EC1FE40A490066C3C3 /* FBAuthToken.swift in Sources */,
 				3FCDE5551F3BA56B00D3C7C0 /* ButtonStyle.swift in Sources */,
+				9A4397CA203E7D0900E45042 /* AccountDetailsController.swift in Sources */,
+				9AE4B0AF203316F3008D1B44 /* PreferenceAccount.swift in Sources */,
 				9ACE27EE1FE40A490066C3C3 /* LoginKitURLs.swift in Sources */,
 				3FCDE5671F3BA56B00D3C7C0 /* File.swift in Sources */,
 				9ACE27FC1FE4284C0066C3C3 /* SeagueAnimator.swift in Sources */,
@@ -617,6 +658,7 @@
 				9A2F52A11FE50DC70062E521 /* NSUtilities.swift in Sources */,
 				9ACE27F81FE4284C0066C3C3 /* SeagueBetweenEmbedded.swift in Sources */,
 				3FCDE55E1F3BA56B00D3C7C0 /* CreateEvent.swift in Sources */,
+				9AFE5E65203C8D32009B9989 /* FacebookAccount.swift in Sources */,
 				9ACE27FB1FE4284C0066C3C3 /* ContentManagerViewController.swift in Sources */,
 				9ACE27FE1FE4284C0066C3C3 /* NSViewController+Utilities.swift in Sources */,
 				3FCDE5581F3BA56B00D3C7C0 /* calendarTable.swift in Sources */,
@@ -624,10 +666,12 @@
 				9ACE27FD1FE4284C0066C3C3 /* NSStoryboard+Utilities.swift in Sources */,
 				3FCDE5771F3BA56B00D3C7C0 /* windowDel.swift in Sources */,
 				3FCDE5701F3BA56B00D3C7C0 /* PopUpWindowController.swift in Sources */,
+				9AE4B0AC2033157F008D1B44 /* UserAccountsController.swift in Sources */,
 				9ACE27FA1FE4284C0066C3C3 /* ContentManagerViewControllerHolder.swift in Sources */,
 				3FCDE5651F3BA56B00D3C7C0 /* EventWindowController.swift in Sources */,
 				9AD3B8061FE7D59800210976 /* FacebookEventManager.swift in Sources */,
 				9ACE27F91FE4284C0066C3C3 /* BackForwardViewController.swift in Sources */,
+				9AA37EC42036976500B23448 /* IntegrationTabController.swift in Sources */,
 				3FCDE5571F3BA56B00D3C7C0 /* calendarData.swift in Sources */,
 				3FCDE5561F3BA56B00D3C7C0 /* calendarCellView.swift in Sources */,
 				3FCDE5641F3BA56B00D3C7C0 /* eventTable.swift in Sources */,

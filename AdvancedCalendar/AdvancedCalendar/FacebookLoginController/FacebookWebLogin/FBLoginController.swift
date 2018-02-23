@@ -8,6 +8,7 @@
 
 import Foundation
 import Cocoa
+import Facebook_Mac_Core
 
 let kFBStoreAccessToken = "FBAStoreccessToken"
 let kFBStoreTokenExpiry = "FBStoreTokenExpiry"
@@ -53,6 +54,8 @@ let kFBStoreAccessPermissions = "FBStoreAccessPermissions"
             result["token"] = token.authenticationToken
             result["expiry"] = token.expiry
             result["permissions"] = token.permissions
+            self.getPermanentToken(tempToken: token.authenticationToken)
+//            return
 
         }
         else {
@@ -111,6 +114,7 @@ let kFBStoreAccessPermissions = "FBStoreAccessPermissions"
             if (accessToken != nil) && (perms != nil) {
                 
                 // Do not notify delegate yet...
+
                 self.setAccessToken(accessToken!, expires: (date?.timeIntervalSinceNow)!, permissions: perms!)
             }
         }
@@ -162,7 +166,65 @@ let kFBStoreAccessPermissions = "FBStoreAccessPermissions"
         self.setAccessToken(accessToken, expires: tokenExpires, permissions: perms)
         notifyDelegate(for: authToken, withError: errorReason)
     }
+    
+    func getPermanentToken(tempToken:String) -> Void{
+        //["grant_type":"fb_exchange_token","client_id":self.appID,"client_secret"="798db73d3f18f375e0d376ed6ef12d81"]
+//        let params = ["username":"john", "password":"123456"] as Dictionary<String, String>
         
+        var request = URLRequest(url: URL(string: "https://graph.facebook.com/v2.10/oauth/access_token?grant_type=fb_exchange_token&client_id=\(self.appID)&client_secret=3dd54059262b4c2a900df09f5a8085a6&fb_exchange_token=\(tempToken)")!)
+        request.httpMethod = "GET"
+//        request.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
+            print(response!)
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!) as! Dictionary<String, AnyObject>
+                print(json)
+            } catch {
+                print("error")
+            }
+        })
+        
+        task.resume()
+        
+//        let req = GraphRequest(graphPath: "oauth/access_token", parameters:["grant_type":"fb_exchange_token","fb_exchange_token":tempToken,"client_id":self.appID,"client_secret":"3dd54059262b4c2a900df09f5a8085a6"], accessToken: AccessToken.current, httpMethod: GraphRequestHTTPMethod(rawValue: "GET")!)
+//        req.start({ (connection, result) in
+//            switch result {
+//            case .failed(let error):
+//                print(error)
+//
+//            case .success(let graphResponse):
+//                if let responseDictionary = graphResponse.dictionaryValue {
+//                    //                    print(responseDictionary)
+//                    if let eventData = responseDictionary["data"] as? [[String:Any]]{
+//
+////                        FBEventStroreManger.sharedStore.updateEvents(eventsDict: eventData)
+//
+//                    }
+//
+////                    if let paging = responseDictionary["paging"] as? [String:Any] {
+////                        if let cursors = paging["cursors"] as? [String:Any] {
+////                            //                            self.refreshEventsWithCompletion(parameters:cursors)
+////
+////                            if let after = cursors["after"] as? String {
+////
+////                                print("\n\n\n\n\ntrying to load next page")
+////
+//////                                self.refreshEventsWithCompletion(parameters:["after":after])
+////                            }
+////
+////                        }
+////                    } else {
+////                        print("Can't read next!!!")
+////                    }
+//
+//                }
+//            }
+//        })
+    }
+    
     func accessToken() -> String? {
         return authToken?.authenticationToken
     }
