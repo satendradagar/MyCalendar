@@ -12,6 +12,16 @@ import Facebook_Mac_Core
 
 class FacebookEventManager: NSObject {
     
+    static func refreshAccessToken() {
+        AccessToken.refreshCurrentToken { (token, error) in
+            print("refreshed token:\(String(describing: token)), \nError:\(String(describing: error))")
+            print("Expiry:\(String(describing: token?.expirationDate))")
+            if nil != error{
+                
+            }
+        }
+    }
+    
     static func refreshEventsWithCompletion(parameters: [String : Any]) {
         let req = GraphRequest(graphPath: "me/events", parameters:parameters, accessToken: AccessToken.current, httpMethod: GraphRequestHTTPMethod(rawValue: "GET")!)
         req.start({ (connection, result) in

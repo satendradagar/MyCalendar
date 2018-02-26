@@ -786,7 +786,7 @@ class PreferencesWindowController: NSWindowController {
                 DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async {
                     FacebookEventManager.requestEventUpdate(sender: nil)
                     self.updateUserProfileData()
-
+                    
                 }
             }
         }

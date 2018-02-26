@@ -388,7 +388,9 @@ class CalendarData: NSObject {
 
         for et in eventStore.calendars(for: EKEntityType.event) {
             
-            
+            if et.title.contains(find: "Facebook"){
+                continue
+            }
             // start Date
             var components = DateComponents();
             

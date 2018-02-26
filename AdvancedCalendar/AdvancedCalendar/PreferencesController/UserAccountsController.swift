@@ -29,7 +29,19 @@ class UserAccountsController: NSViewController, NSOutlineViewDataSource, NSOutli
     
     /// The identifier used for collection rows in the outline view
     static let collectionCellIdentifier = "DataCell"
+    
+    static func registerActiveAccounts(){
+        let collections = PreferencesStore.sharedInstance.userAccountsObjects()
+        for acc in collections {
+            if acc.status == 1{
+                if acc.identifier == "com.facebook"{
+                    FacebookEventManager.refreshAccessToken(); FBEventStroreManger.sharedStore.setupRefreshFacebookEventsTimer()
+                }
+            }
+        }
 
+    }
+    
     // MARK: Image Collection Management
 
     var accountSelectionHanldler: ((PreferenceAccount?) -> Void)?
@@ -193,6 +205,7 @@ class UserAccountsController: NSViewController, NSOutlineViewDataSource, NSOutli
             selectedAccount.status = 0
             syncObjectState()
             reloadOutlineAndSelectFirstItemIfNecessary()
+            FBEventStroreManger.sharedStore.removeFacebookCalendar()
         }
         
         
@@ -233,7 +246,6 @@ class UserAccountsController: NSViewController, NSOutlineViewDataSource, NSOutli
     func loginWithFacebook(acount:PreferenceAccount)  {
         
         facebookLoginWindow = FacebookLoginWindowController(windowNibName: "FacebookLoginWindowController")
-        facebookLoginWindow?.showLoginSheet(fromWindow: self.view.window!)
         facebookLoginWindow?.completionHandler = {
             accessToken, error in
             if (nil == error){
@@ -244,8 +256,12 @@ class UserAccountsController: NSViewController, NSOutlineViewDataSource, NSOutli
                 
                 FacebookEventManager.requestEventUpdate(sender: nil)
                 self.updateFacebookUserProfileData(acount: acount)
+            FBEventStroreManger.sharedStore.setupRefreshFacebookEventsTimer()
+
             }
         }
+
+        facebookLoginWindow?.showLoginSheet(fromWindow: self.view.window!)
     }
     
     

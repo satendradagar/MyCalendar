@@ -63,24 +63,19 @@ class FacebookLoginWindowController: NSWindowController, FBTokenFacebookDelegate
         self.window?.close()
     }
     
+ 
+
     func showLoginSheet(fromWindow:NSWindow)  {
-        fromWindow.addChildWindow(self.window!, ordered: .above)
-//        fromWindow.beginSheet(self.window!, completionHandler: {
-//            responseCode  in
-//            if (responseCode == NSModalResponseOK)
-//            {
-//                print("NSModalResponseOK")
-//            }
-//            else if (responseCode == NSModalResponseCancel)
-//            {
-//                print("NSModalResponseCancel")
-//            }
-//            else
-//            {
-//                print("Other")
-//            }
-//        })
-        
+        AccessToken.refreshCurrentToken { (token, error) in
+            print("refreshed token:\(String(describing: token)), \nError:\(String(describing: error))")
+            print("Expiry:\(String(describing: token?.expirationDate))")
+            if nil != error{
+                fromWindow.addChildWindow(self.window!, ordered: .above)
+            }
+            else{
+                self.completionHandler!(token, nil)
+            }
+        }
     }
 }
 
