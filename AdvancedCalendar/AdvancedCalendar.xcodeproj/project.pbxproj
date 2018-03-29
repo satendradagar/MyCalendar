@@ -63,6 +63,8 @@
 		3FCDE57B1F3BA6F100D3C7C0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FCDE5791F3BA6F100D3C7C0 /* MainMenu.xib */; };
 		3FCDE57F1F3BA84000D3C7C0 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCDE57E1F3BA84000D3C7C0 /* ServiceManagement.framework */; };
 		3FCDE5811F3BA84600D3C7C0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCDE5801F3BA84600D3C7C0 /* Cocoa.framework */; };
+		9A196016206D160A00188473 /* GTLR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A196005206D15E000188473 /* GTLR.framework */; };
+		9A196017206D160A00188473 /* GTLR.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A196005206D15E000188473 /* GTLR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9A2F52A11FE50DC70062E521 /* NSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F52A01FE50DC70062E521 /* NSUtilities.swift */; };
 		9A2F52B61FE52F9F0062E521 /* Facebook_Mac_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2F52B11FE52F680062E521 /* Facebook_Mac_Core.framework */; };
 		9A2F52B71FE52FA90062E521 /* Facebook_Mac_Core.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A2F52B11FE52F680062E521 /* Facebook_Mac_Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -102,6 +104,76 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9A196004206D15E000188473 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A195FF8206D15E000188473 /* GTLRCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4F38F6A60B66E91D00B24B81;
+			remoteInfo = GTLROSXCore;
+		};
+		9A196006206D15E000188473 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A195FF8206D15E000188473 /* GTLRCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F4469DB41C40229D00BCFAA1;
+			remoteInfo = GTLRiOSCore;
+		};
+		9A196008206D15E000188473 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A195FF8206D15E000188473 /* GTLRCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F4A8723C1DAD1AA400D69E09;
+			remoteInfo = GTLRtvOSCore;
+		};
+		9A19600A206D15E000188473 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A195FF8206D15E000188473 /* GTLRCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F4B18FE41F10035400E55018;
+			remoteInfo = GTLRwatchOSCore;
+		};
+		9A19600C206D15E000188473 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A195FF8206D15E000188473 /* GTLRCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4F12027D11A4CA2F00BEB470;
+			remoteInfo = GTLROSXUnitTests;
+		};
+		9A19600E206D15E000188473 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A195FF8206D15E000188473 /* GTLRCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F4368F721B8233BF00E17643;
+			remoteInfo = GTLRiOSUnitTests;
+		};
+		9A196010206D15E000188473 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A195FF8206D15E000188473 /* GTLRCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F4A8727D1DAD1FA000D69E09;
+			remoteInfo = GTLRtvOSUnitTests;
+		};
+		9A196012206D15E000188473 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A195FF8206D15E000188473 /* GTLRCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4F1AD9020B71603F00DC0485;
+			remoteInfo = OSXDevTool;
+		};
+		9A196014206D15F200188473 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A195FF8206D15E000188473 /* GTLRCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F38F6A50B66E91D00B24B81;
+			remoteInfo = GTLROSXCore;
+		};
+		9A196018206D160A00188473 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A195FF8206D15E000188473 /* GTLRCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F38F6A50B66E91D00B24B81;
+			remoteInfo = GTLROSXCore;
+		};
 		9A2F52B01FE52F680062E521 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A2F52A61FE52F680062E521 /* Facebook Mac Core.xcodeproj */;
@@ -145,6 +217,7 @@
 				9ADE7B8C1FF3F3D800AE8885 /* Bolts.framework in CopyFiles */,
 				9ADE7B7F1FF3F05900AE8885 /* FBSDKCoreKit.framework in CopyFiles */,
 				9A2F52B71FE52FA90062E521 /* Facebook_Mac_Core.framework in CopyFiles */,
+				9A196017206D160A00188473 /* GTLR.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +285,7 @@
 		3FCDE57A1F3BA6F100D3C7C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		3FCDE57E1F3BA84000D3C7C0 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		3FCDE5801F3BA84600D3C7C0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		9A195FF8206D15E000188473 /* GTLRCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GTLRCore.xcodeproj; path = "../Google-Mac/Source/GTLRCore.xcodeproj"; sourceTree = "<group>"; };
 		9A2F52A01FE50DC70062E521 /* NSUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUtilities.swift; sourceTree = "<group>"; };
 		9A2F52A61FE52F680062E521 /* Facebook Mac Core.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Facebook Mac Core.xcodeproj"; path = "../facebook-mac-login/Facebook Core and Login Swift/Facebook Mac Core/Facebook Mac Core/Facebook Mac Core.xcodeproj"; sourceTree = "<group>"; };
 		9A4397C9203E7D0900E45042 /* AccountDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsController.swift; sourceTree = "<group>"; };
@@ -266,6 +340,7 @@
 				9A2F52B61FE52F9F0062E521 /* Facebook_Mac_Core.framework in Frameworks */,
 				3FCDE5811F3BA84600D3C7C0 /* Cocoa.framework in Frameworks */,
 				3FCDE57F1F3BA84000D3C7C0 /* ServiceManagement.framework in Frameworks */,
+				9A196016206D160A00188473 /* GTLR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +362,7 @@
 		3FCDE5061F3BA4D000D3C7C0 = {
 			isa = PBXGroup;
 			children = (
+				9A195FF8206D15E000188473 /* GTLRCore.xcodeproj */,
 				9A2F52A61FE52F680062E521 /* Facebook Mac Core.xcodeproj */,
 				3FCDE5111F3BA4D000D3C7C0 /* AdvancedCalendar */,
 				3FA457EE1F3BAD28007D8607 /* LauncherApplication */,
@@ -379,6 +455,21 @@
 				3FCDE57E1F3BA84000D3C7C0 /* ServiceManagement.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9A195FF9206D15E000188473 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A196005206D15E000188473 /* GTLR.framework */,
+				9A196007206D15E000188473 /* GTLR.framework */,
+				9A196009206D15E000188473 /* GTLR.framework */,
+				9A19600B206D15E000188473 /* GTLRwatchOSCore.framework */,
+				9A19600D206D15E000188473 /* GTLROSXUnitTests.xctest */,
+				9A19600F206D15E000188473 /* GTLRiOSUnitTests.xctest */,
+				9A196011206D15E000188473 /* GTLRtvOSUnitTests.xctest */,
+				9A196013206D15E000188473 /* OSXDevTool */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		9A2F52A71FE52F680062E521 /* Products */ = {
@@ -497,7 +588,9 @@
 			buildRules = (
 			);
 			dependencies = (
+				9A196015206D15F200188473 /* PBXTargetDependency */,
 				9A2F52B51FE52F710062E521 /* PBXTargetDependency */,
+				9A196019206D160A00188473 /* PBXTargetDependency */,
 			);
 			name = AdvancedCalendar;
 			productName = AdvancedCalendar;
@@ -551,6 +644,10 @@
 					ProductGroup = 9A2F52A71FE52F680062E521 /* Products */;
 					ProjectRef = 9A2F52A61FE52F680062E521 /* Facebook Mac Core.xcodeproj */;
 				},
+				{
+					ProductGroup = 9A195FF9206D15E000188473 /* Products */;
+					ProjectRef = 9A195FF8206D15E000188473 /* GTLRCore.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -561,6 +658,62 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		9A196005206D15E000188473 /* GTLR.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GTLR.framework;
+			remoteRef = 9A196004206D15E000188473 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A196007206D15E000188473 /* GTLR.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GTLR.framework;
+			remoteRef = 9A196006206D15E000188473 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A196009206D15E000188473 /* GTLR.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GTLR.framework;
+			remoteRef = 9A196008206D15E000188473 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A19600B206D15E000188473 /* GTLRwatchOSCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GTLRwatchOSCore.framework;
+			remoteRef = 9A19600A206D15E000188473 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A19600D206D15E000188473 /* GTLROSXUnitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GTLROSXUnitTests.xctest;
+			remoteRef = 9A19600C206D15E000188473 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A19600F206D15E000188473 /* GTLRiOSUnitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GTLRiOSUnitTests.xctest;
+			remoteRef = 9A19600E206D15E000188473 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A196011206D15E000188473 /* GTLRtvOSUnitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GTLRtvOSUnitTests.xctest;
+			remoteRef = 9A196010206D15E000188473 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9A196013206D15E000188473 /* OSXDevTool */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = OSXDevTool;
+			remoteRef = 9A196012206D15E000188473 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		9A2F52B11FE52F680062E521 /* Facebook_Mac_Core.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -695,6 +848,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9A196015206D15F200188473 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GTLROSXCore;
+			targetProxy = 9A196014206D15F200188473 /* PBXContainerItemProxy */;
+		};
+		9A196019206D160A00188473 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GTLROSXCore;
+			targetProxy = 9A196018206D160A00188473 /* PBXContainerItemProxy */;
+		};
 		9A2F52B51FE52F710062E521 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Facebook Mac Core";
@@ -858,7 +1021,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AdvancedCalendar/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks/";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks/ @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ah.com.AdvancedCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -874,7 +1037,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AdvancedCalendar/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks/";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks/ @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ah.com.AdvancedCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
