@@ -8,11 +8,13 @@
 
 import Cocoa
 import Facebook_Mac_Core
+//import
 
 class PreferencesWindowController: NSWindowController {
     
     var prefStore = PreferencesStore.sharedInstance
     var facebookLoginWindow: FacebookLoginWindowController?
+    var googleLoginManager = GoogleLoginManager.sharedInstance
     
     @IBOutlet weak var outletRunAtLogin: NSButton!
     @IBOutlet weak var outletFirstDayOfWeek: NSComboBox!
@@ -792,6 +794,7 @@ class PreferencesWindowController: NSWindowController {
         }
     }
     
+
     func updateUserProfileData()  {
         let req = GraphRequest(graphPath: "me", parameters:[:], accessToken: AccessToken.current, httpMethod: GraphRequestHTTPMethod(rawValue: "GET")!)
         req.start({ (connection, result) in
@@ -822,5 +825,6 @@ class PreferencesWindowController: NSWindowController {
             }
         })
     }
+    
 }
 

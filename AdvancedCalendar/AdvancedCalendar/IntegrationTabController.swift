@@ -35,7 +35,8 @@ class IntegrationTabController: NSTabViewItem {
                     self.accountDetailsController.configureWithAccountController(newAccountController: fbDetails)
                 case "com.google":
                     print(accID)
-                    self.accountDetailsController.configureWithAccountController(newAccountController:nil)
+                    let googleDetails  = GoogleAccount.instance();
+                    self.accountDetailsController.configureWithAccountController(newAccountController:googleDetails)
 
                 default:
                     print(accID)
