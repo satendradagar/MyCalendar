@@ -17,6 +17,7 @@ import Facebook_Mac_Core
 class UserAccountsController: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate {
     // MARK: Properties
     var facebookLoginWindow: FacebookLoginWindowController?
+    var googleLoginManager = GoogleLoginManager.sharedInstance
 
     @IBOutlet var outlineView: NSOutlineView!
     @IBOutlet var accountsMenu: NSMenu!
@@ -34,8 +35,21 @@ class UserAccountsController: NSViewController, NSOutlineViewDataSource, NSOutli
         let collections = PreferencesStore.sharedInstance.userAccountsObjects()
         for acc in collections {
             if acc.status == 1{
-                if acc.identifier == "com.facebook"{
-                    FacebookEventManager.refreshAccessToken(); FBEventStroreManger.sharedStore.setupRefreshFacebookEventsTimer()
+                if let accID = acc.identifier{
+                 
+                    switch (accID) {
+                    case "com.facebook":
+                        print(accID)
+                        FacebookEventManager.refreshAccessToken(); FBEventStroreManger.sharedStore.setupRefreshFacebookEventsTimer()
+                        //                menuObj.status = 1
+                    //                syncObjectState()
+                    case "com.google":
+                        print(accID)
+                        GoogleEventStoreMaanger.sharedStore.setupRefreshEventsTimer()
+                    default:
+                        print(accID)
+                        
+                    }
                 }
             }
         }
@@ -60,6 +74,7 @@ class UserAccountsController: NSViewController, NSOutlineViewDataSource, NSOutli
         super.viewDidLoad()
 //        self.imageCollections = nil
         reloadOutlineAndSelectFirstItemIfNecessary()
+        print("Google:\(signedInUsername())")
     }
 
     func reloadOutlineAndSelectFirstItemIfNecessary() {
@@ -203,9 +218,24 @@ class UserAccountsController: NSViewController, NSOutlineViewDataSource, NSOutli
         if accounts.count > 0 {
             let selectedAccount = accounts[0]
             selectedAccount.status = 0
+            if let accID = selectedAccount.identifier{
+                
+                switch (accID) {
+                case "com.facebook":
+                    print(accID)
+                    FBEventStroreManger.sharedStore.removeFacebookCalendar()
+                    //                menuObj.status = 1
+                //                syncObjectState()
+                case "com.google":
+                    print(accID)
+                    googleLoginManager.logoutUser()
+                default:
+                    print(accID)
+                    
+                }
+            }
             syncObjectState()
             reloadOutlineAndSelectFirstItemIfNecessary()
-            FBEventStroreManger.sharedStore.removeFacebookCalendar()
         }
         
         
@@ -235,7 +265,7 @@ class UserAccountsController: NSViewController, NSOutlineViewDataSource, NSOutli
 //                syncObjectState()
             case "com.google":
                 print(accID)
-
+                self.didClickGoogleLogin(acount: menuObj)
             default:
                 print(accID)
 
@@ -296,6 +326,43 @@ class UserAccountsController: NSViewController, NSOutlineViewDataSource, NSOutli
             }
         })
     }
+    
+    func didClickGoogleLogin(acount:PreferenceAccount) -> Void {
+        
+        googleLoginManager.loginUser { (isSuccess) in
+            acount.status = 1
+            self.syncObjectState()
+            let defaults = UserDefaults.standard
+            defaults.set(self.signedInUsername(), forKey: "Google_Profile_Name")
+            defaults.synchronize()
+            GoogleEventStoreMaanger.sharedStore.setupRefreshEventsTimer()
+
+        }
+        
+    }
+    
+    func didClickGoogleLogout(acount:PreferenceAccount) -> Void {
+        
+        googleLoginManager.logoutUser()
+        acount.status = 1
+        self.syncObjectState()
+    }
+    
+func signedInUsername() -> String? {
+        // Get the email address of the signed-in user
+    let auth: GTMFetcherAuthorizationProtocol? = googleLoginManager.calendarService()?.authorizer
+    let isSignedIn: Bool? = auth?.canAuthorize
+    if isSignedIn ?? false {
+        return auth?.userEmail
+    } else {
+        return nil
+    }
+}
+    
+func isSignedIn() -> Bool {
+    let name = signedInUsername()
+    return name != nil
+}
 //    func updateFBLoginButton()  {
 //        let defaults = UserDefaults.standard
 //        let isFBLogin = defaults.bool(forKey:"fbLogin")

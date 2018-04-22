@@ -41,20 +41,20 @@ struct FBUserEvent {
     func descirption(){
         print("Title:\(title) Start:\(start) + End:\(end) + Details:\(details)")
     }
-    func syncEventWithCalendar() {
+    func syncEventWithCalendar(calendar:EKCalendar) {
         
         if let eventTimings = times{
             for dict in eventTimings{
                 let startTime = (dict["start_time"] as! String).dateObject()
                 let endTime = (dict["end_time"] as! String).dateObject()
                 let eventID = dict["id"] as! String
-                EKCalendar.syncEventWith(title: title, start: startTime, end: endTime, details: details, eventID: eventID, rsvp: rsvp)
-
+                let eventURL = "https://www.facebook.com/events/\(eventID)"
+                calendar.syncEventWith(title: title, start: startTime, end: endTime, details: details, eventID: eventID, rsvp: rsvp, eventURL: eventURL)
             }
         }
         else{
-            EKCalendar.syncEventWith(title: title, start: start, end: end, details: details, eventID: eventID, rsvp: rsvp)
-
+            let eventURL = "https://www.facebook.com/events/\(String(describing: eventID))"
+            calendar.syncEventWith(title: title, start: start , end: end, details: details, eventID: eventID, rsvp: rsvp, eventURL: eventURL)
         }
 //        let eventStore = EKEventStore () //default event store
 //        let type = EKEntityType.event;
