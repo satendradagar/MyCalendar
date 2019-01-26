@@ -58,7 +58,8 @@ class CalendarViewController: NSViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(ReloadCalendar), name: NSNotification.Name(rawValue: "ReloadCalendarNo"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ReloadCalendar), name: NSNotification.Name(rawValue: "CreatEventNoti"), object: nil)
           NotificationCenter.default.addObserver(self, selector: #selector(closeWindow), name: NSNotification.Name(rawValue: "RemoveAgendaView"), object: nil)
-        
+        self.mCalendarView.calendarTable.reloadData()
+        print("View Will appear")
     }
     
     override func viewWillDisappear() {

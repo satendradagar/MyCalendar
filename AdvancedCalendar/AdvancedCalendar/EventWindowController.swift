@@ -205,9 +205,9 @@ class EventWindowController: NSWindowController, NSTableViewDelegate ,NSTableVie
        let calendarCol = Int(indexes[1])!
         
         let cells =  calendarDataInstane.selectedMonthCalArray[calendarRow][calendarCol].events.count
-        var totalHeight = cells*25
-        totalHeight += 99
-        return CGFloat(totalHeight)
+        var totalHeight = cells * 44
+        totalHeight += 63
+        return min(CGFloat(totalHeight), 510.0)
     }
     
     func setWindowHeight(_ height:CGFloat) -> Void {
@@ -247,7 +247,7 @@ class EventWindowController: NSWindowController, NSTableViewDelegate ,NSTableVie
     }
     func closeWindow() {
         self.eventDetailsWindowOutlet!.orderOut(self)
-
+        self.eventDetailsWindowOutlet.performClose(nil)
     }
     @IBAction func btn_CloseAgenda(_ sender: Any) {
         //        calendarTable.removeAgendaView(sender)

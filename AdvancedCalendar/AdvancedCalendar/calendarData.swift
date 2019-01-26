@@ -85,6 +85,15 @@ class calendarCell{
     var month: Int = 0
     var year: Int = 0
     var events: [calendarEventItem] = []
+    
+    var dateComponent: DateComponents {
+        var component = DateComponents.init()
+        component.calendar = NSCalendar.current
+        component.year = year
+        component.month = month
+        component.day = day
+        return component
+    }
 }
 
 class CalendarData: NSObject {
@@ -117,7 +126,31 @@ class CalendarData: NSObject {
         firstDateOfSelectedMonth  = Calendar.current.date(from: components)!
         
         layoutCalendar()
+        registerForiCalStoreChange()
         
+        }
+    
+    deinit {
+
+        unRegisterForiCalStoreChange()
+
+    }
+    
+    func registerForiCalStoreChange() -> Void {
+//    EKEventStoreChanged
+        print("++register for cal change")
+
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.EKEventStoreChanged, object: nil, queue: nil) { (notification) in
+            print("Change Received")
+            self.loadCalendarData()
+        }
+    }
+    
+    func unRegisterForiCalStoreChange() -> Void {
+        
+        print("--unregister for cal change")
+
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.EKEventStoreChanged, object: nil)
     }
     
     func loadCalendarData() -> Void {
@@ -538,23 +571,27 @@ class CalendarData: NSObject {
         for event in events! {
             
             let startDateComponentsWithoutTime:DateComponents!
-            
+            let endDateComponentsWithoutTime:DateComponents!
+
             let unitFlags: NSCalendar.Unit = [.day, .month, .year]
             if let eventObj = event as? EKEvent{
                 
                  startDateComponentsWithoutTime = (Calendar.current as NSCalendar).components(unitFlags, from: eventObj.startDate)
-   
+                 endDateComponentsWithoutTime = (Calendar.current as NSCalendar).components(unitFlags, from: eventObj.endDate)
             }
             else
             {
                 if let eventObj = event as? EKReminder{
                     
                     startDateComponentsWithoutTime = eventObj.startDateComponents
-                    
+                    endDateComponentsWithoutTime = eventObj.dueDateComponents
+                    //SS TODO:
                 }
                 else{
                     print("Initiating Blank component");
                     startDateComponentsWithoutTime = DateComponents.init()
+                    endDateComponentsWithoutTime = DateComponents.init()
+
                 }
 
             }
@@ -564,20 +601,53 @@ class CalendarData: NSObject {
                     
                     let cell = selectedMonthCalArray[rowWeekIndex][colDayIndex]
                     
-                    if ( startDateComponentsWithoutTime.day == cell.day ) &&
-                        (startDateComponentsWithoutTime.month == cell.month) &&
-                        (startDateComponentsWithoutTime.year == cell.year ) {
+//                    if ( startDateComponentsWithoutTime.day == cell.day ) &&
+//                        (startDateComponentsWithoutTime.month == cell.month) &&
+//                        (startDateComponentsWithoutTime.year == cell.year ) {
+//
+//                            let calendarEventItemObj = calendarEventItem()
+//                            calendarEventItemObj.event = event
+//                            calendarEventItemObj.type = type
+//                            cell.events.append(calendarEventItemObj)
+//
+//                    }
+                    
+//                    if ( startDateComponentsWithoutTime.day == cell.day ) &&
+//                        (startDateComponentsWithoutTime.month == cell.month) &&
+//                        (startDateComponentsWithoutTime.year == cell.year ) {
+//
+//
+//                        let calendarEventItemObj = calendarEventItem()
+//                        calendarEventItemObj.event = event
+//                        calendarEventItemObj.type = type
+//                        cell.events.append(calendarEventItemObj)
+//
+//                    }
+                    
+                    if let startDate : Date = Calendar.current.date(from: startDateComponentsWithoutTime){
+//                        print("[\nStart: \(startDate)")
+                        if let endDate: Date = Calendar.current.date(from: endDateComponentsWithoutTime){
+//                            print("End: \(endDate)")
+                            if let cellDate: Date = Calendar.current.date(from: cell.dateComponent){
+//                                print("cellDate: \(cellDate)\n]")
+                                if (cellDate.isBetween(startDate: startDate, endDate: endDate) == true){ //cell is somewhere in between
+                                    let calendarEventItemObj = calendarEventItem()
+                                    calendarEventItemObj.event = event
+                                    calendarEventItemObj.type = type
+                                    cell.events.append(calendarEventItemObj)
+
+                                }
+                            }
                             
-                            let calendarEventItemObj = calendarEventItem()
-                            calendarEventItemObj.event = event
-                            calendarEventItemObj.type = type
-                            cell.events.append(calendarEventItemObj)
-                            
+                        }
+
                     }
+
                 }
             }
         }
     }
+    
     func addEventsInCalendar(_ events  : [EKEvent])
     {
         var calEvents = [EKEvent]()
@@ -655,14 +725,11 @@ class CalendarData: NSObject {
                 subEvent.startDate = subEventStartDate!
                 subEvent.endDate = event.endDate
                 
-                
-                
             }
             else
             {
                 calEvents.append(event)
             }
-            
             
         }
         
@@ -671,7 +738,25 @@ class CalendarData: NSObject {
             print(event.title , event.startDate , event.endDate)
         }
     }
-    
-    
-    
 }
+
+
+//extension Date
+//{
+//    func isBetween(startDate:Date, endDate:Date)->Bool
+//    {
+//        return (startDate.compare(self) != .orderedDescending) && (endDate.compare(self) == .orderedDescending)
+//    }
+//}
+
+extension Date {
+    
+//    func isBetween(startDate:Date, endDate:Date)->Bool{
+//        return (min(startDate, endDate) ... max(startDate, endDate)).contains(self)
+//    }
+    
+    func isBetween(startDate:Date, endDate:Date)->Bool{
+        return startDate.timeIntervalSince1970 <= self.timeIntervalSince1970 && endDate.timeIntervalSince1970 > self.timeIntervalSince1970
+    }
+}
+

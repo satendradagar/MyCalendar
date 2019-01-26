@@ -70,7 +70,7 @@ open class eventTable: NSObject , NSTableViewDataSource,NSTableViewDelegate{
             cellView = tableView.make(withIdentifier: "eventTitleView", owner: self) as! NSTableCellView
             
             cellView.textField?.stringValue = "\(event.title )"
-            
+            cellView.textField?.toolTip = event.title
             return cellView
         }
         else if ( indexOfColumn == 2 )

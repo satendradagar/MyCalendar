@@ -78,12 +78,12 @@
 		9A4397CA203E7D0900E45042 /* AccountDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4397C9203E7D0900E45042 /* AccountDetailsController.swift */; };
 		9A559F942042C4B700C84C48 /* StringOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A559F932042C4B700C84C48 /* StringOperations.swift */; };
 		9A67BE4C2089B1BD00F3F370 /* EKCalendarSyncEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A67BE4B2089B1BD00F3F370 /* EKCalendarSyncEvent.swift */; };
-		9A796818208B9FEE00E8654D /* AppAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A796819208B9FEE00E8654D /* AppAuth.framework */; };
-		9A79681A208B9FFD00E8654D /* AppAuth.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A796819208B9FEE00E8654D /* AppAuth.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9A79681B208BA05200E8654D /* GTMSessionFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A79681C208BA05200E8654D /* GTMSessionFetcher.framework */; };
 		9A79681D208BA08100E8654D /* GTMSessionFetcher.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A79681C208BA05200E8654D /* GTMSessionFetcher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9A88C3F61FE97CC2009BB6DF /* StringISOToDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A88C3F51FE97CC2009BB6DF /* StringISOToDate.swift */; };
 		9AA37EC42036976500B23448 /* IntegrationTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA37EC32036976500B23448 /* IntegrationTabController.swift */; };
+		9AAFA3F320D821AF008450C7 /* AppAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A796819208B9FEE00E8654D /* AppAuth.framework */; };
+		9AAFA3FD20D821C0008450C7 /* AppAuth.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9AAFA3FC20D821C0008450C7 /* AppAuth.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9ABE6B6020826571001CA2D1 /* GoogleEventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE6B5F20826571001CA2D1 /* GoogleEventManager.swift */; };
 		9ACE27D61FE3F63F0066C3C3 /* FacebookLoginWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ACE27D51FE3F63F0066C3C3 /* FacebookLoginWindowController.xib */; };
 		9ACE27D81FE3F66B0066C3C3 /* FacebookLoginWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACE27D71FE3F66B0066C3C3 /* FacebookLoginWindowController.swift */; };
@@ -110,8 +110,6 @@
 		9AE4B0AC2033157F008D1B44 /* UserAccountsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE4B0A92033157E008D1B44 /* UserAccountsController.swift */; };
 		9AE4B0AD2033157F008D1B44 /* UserAccountsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AE4B0AA2033157E008D1B44 /* UserAccountsController.xib */; };
 		9AE4B0AF203316F3008D1B44 /* PreferenceAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE4B0AE203316F3008D1B44 /* PreferenceAccount.swift */; };
-		9AE947A12075EA4D003B8581 /* GTMSessionFetcherOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE947A22075EA4D003B8581 /* GTMSessionFetcherOSX.framework */; };
-		9AE947AB2076178C003B8581 /* GTMSessionFetcherOSX.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9AE947A22075EA4D003B8581 /* GTMSessionFetcherOSX.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9AFE5E63203C8C29009B9989 /* FacebookAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AFE5E62203C8C29009B9989 /* FacebookAccount.storyboard */; };
 		9AFE5E65203C8D32009B9989 /* FacebookAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFE5E64203C8D32009B9989 /* FacebookAccount.swift */; };
 		EA0FE8D71F7A08D600582D53 /* Lilius App Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = EA0FE8D51F7A04A600582D53 /* Lilius App Icon.icns */; };
@@ -230,12 +228,11 @@
 			dstSubfolderSpec = 10;
 			files = (
 				9A79681D208BA08100E8654D /* GTMSessionFetcher.framework in CopyFiles */,
-				9A79681A208B9FFD00E8654D /* AppAuth.framework in CopyFiles */,
-				9AE947AB2076178C003B8581 /* GTMSessionFetcherOSX.framework in CopyFiles */,
 				9ADE7B8C1FF3F3D800AE8885 /* Bolts.framework in CopyFiles */,
 				9ADE7B7F1FF3F05900AE8885 /* FBSDKCoreKit.framework in CopyFiles */,
 				9A2F52B71FE52FA90062E521 /* Facebook_Mac_Core.framework in CopyFiles */,
 				9A196017206D160A00188473 /* GTLR.framework in CopyFiles */,
+				9AAFA3FD20D821C0008450C7 /* AppAuth.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,12 +316,14 @@
 		9A3E5A692072972C0058C45B /* GTLRCalendarQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLRCalendarQuery.h; sourceTree = "<group>"; };
 		9A3E5A6A2072972C0058C45B /* GTLRCalendarService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLRCalendarService.h; sourceTree = "<group>"; };
 		9A4397C9203E7D0900E45042 /* AccountDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsController.swift; sourceTree = "<group>"; };
+		9A484EDC20B518D300436518 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GTMSessionFetcher.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Lilius_App-axrfoefqqryhxdcxfgzhafcnwcen/Build/Products/Debug/GTMSessionFetcher.framework"; sourceTree = "<group>"; };
 		9A559F932042C4B700C84C48 /* StringOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringOperations.swift; sourceTree = "<group>"; };
 		9A67BE4B2089B1BD00F3F370 /* EKCalendarSyncEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EKCalendarSyncEvent.swift; sourceTree = "<group>"; };
 		9A796819208B9FEE00E8654D /* AppAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A79681C208BA05200E8654D /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A88C3F51FE97CC2009BB6DF /* StringISOToDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringISOToDate.swift; sourceTree = "<group>"; };
 		9AA37EC32036976500B23448 /* IntegrationTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationTabController.swift; sourceTree = "<group>"; };
+		9AAFA3FC20D821C0008450C7 /* AppAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppAuth.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Lilius_App-axrfoefqqryhxdcxfgzhafcnwcen/Build/Products/Debug/AppAuth.framework"; sourceTree = "<group>"; };
 		9ABE6B5F20826571001CA2D1 /* GoogleEventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleEventManager.swift; sourceTree = "<group>"; };
 		9ACE27D51FE3F63F0066C3C3 /* FacebookLoginWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FacebookLoginWindowController.xib; sourceTree = "<group>"; };
 		9ACE27D71FE3F66B0066C3C3 /* FacebookLoginWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLoginWindowController.swift; sourceTree = "<group>"; };
@@ -370,15 +369,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A796818208B9FEE00E8654D /* AppAuth.framework in Frameworks */,
-				9AE947A12075EA4D003B8581 /* GTMSessionFetcherOSX.framework in Frameworks */,
 				9ADE7B8A1FF3F3D000AE8885 /* Bolts.framework in Frameworks */,
 				9ADE7B7D1FF3F04D00AE8885 /* FBSDKCoreKit.framework in Frameworks */,
-				9A79681B208BA05200E8654D /* GTMSessionFetcher.framework in Frameworks */,
 				9A2F52B61FE52F9F0062E521 /* Facebook_Mac_Core.framework in Frameworks */,
 				3FCDE5811F3BA84600D3C7C0 /* Cocoa.framework in Frameworks */,
 				3FCDE57F1F3BA84000D3C7C0 /* ServiceManagement.framework in Frameworks */,
+				9A79681B208BA05200E8654D /* GTMSessionFetcher.framework in Frameworks */,
 				9A196016206D160A00188473 /* GTLR.framework in Frameworks */,
+				9AAFA3F320D821AF008450C7 /* AppAuth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +398,8 @@
 		3FCDE5061F3BA4D000D3C7C0 = {
 			isa = PBXGroup;
 			children = (
+				9AAFA3FC20D821C0008450C7 /* AppAuth.framework */,
+				9A484EDC20B518D300436518 /* GTMSessionFetcher.framework */,
 				9A3E5A6220728FAA0058C45B /* AdvancedCalendar-Bridging-Header.h */,
 				9A195FF8206D15E000188473 /* GTLRCore.xcodeproj */,
 				9A2F52A61FE52F680062E521 /* Facebook Mac Core.xcodeproj */,
