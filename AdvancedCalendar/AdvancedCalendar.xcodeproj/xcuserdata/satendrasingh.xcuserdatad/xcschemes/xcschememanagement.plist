@@ -9,10 +9,28 @@
 			<key>orderHint</key>
 			<integer>24</integer>
 		</dict>
+		<key>AdvancedCalendar.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>27</integer>
+		</dict>
 		<key>LauncherApplication.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>22</integer>
+		</dict>
+		<key>LauncherApplication.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>29</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>3FCDE50E1F3BA4D000D3C7C0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

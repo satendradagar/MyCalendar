@@ -38,7 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var dateReact = NSRect()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        SDKSettings.autoLoginEnable = false
+//        SDKSettings.autoLoginEnable = false
         SDKApplicationDelegate.shared.applicationDidFinishLaunching(aNotification)
         UserAccountsController.registerActiveAccounts()
         statusItem.target = self

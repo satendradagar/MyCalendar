@@ -402,7 +402,8 @@ static NSMutableDictionary *DeepMutableCopyOfJSONDictionary(NSDictionary *initia
         const char *dynamicMarker = strstr(attr, ",D");
         if (dynamicMarker &&
             (dynamicMarker[2] == 0 || dynamicMarker[2] == ',' )) {
-          [array addObject:@(propName)];
+            NSString *str = @(propName);
+          [array addObject:str];
         }
       }
       free(properties);
