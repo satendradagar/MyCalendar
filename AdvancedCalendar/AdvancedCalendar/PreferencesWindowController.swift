@@ -8,6 +8,7 @@
 
 import Cocoa
 import Facebook_Mac_Core
+import FacebookEventManager
 //import
 
 class PreferencesWindowController: NSWindowController {

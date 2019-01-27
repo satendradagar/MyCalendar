@@ -8,13 +8,14 @@
 
 import Foundation
 import EventKit
+import EventKitExtension
 
 let googleCalendarName = "Google Lilius"
 let googleCalendarIdentifier = "com.google.Lilius"
 
 class GoogleEventStoreMaanger: NSObject {
     var timer: Timer?
-    private var fbEvents = [FBUserEvent]()
+//    private var fbEvents = [FBUserEvent]()
     static let sharedStore = GoogleEventStoreMaanger()
     let googleEventManger = GoogleEventManager.init()
     //    lazy var sharedStore: FBEventStroreManger = {
