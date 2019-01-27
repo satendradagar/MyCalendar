@@ -80,7 +80,6 @@
 		9AA1A08A21FCB536003C2A9F /* GTLRCalendarService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1A08421FCB536003C2A9F /* GTLRCalendarService.m */; };
 		9AA1A0BD21FCC0AF003C2A9F /* Facebook_Mac_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA1A06921FCAF38003C2A9F /* Facebook_Mac_Core.framework */; };
 		9AA37EC42036976500B23448 /* IntegrationTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA37EC32036976500B23448 /* IntegrationTabController.swift */; };
-		9AABEF7021FDAAD900CBC984 /* EKCalendarSyncEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AABEF6621FDAAD800CBC984 /* EKCalendarSyncEvent.swift */; };
 		9AAFA3F320D821AF008450C7 /* AppAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A796819208B9FEE00E8654D /* AppAuth.framework */; };
 		9ABE6B6020826571001CA2D1 /* GoogleEventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE6B5F20826571001CA2D1 /* GoogleEventManager.swift */; };
 		9ACE27D61FE3F63F0066C3C3 /* FacebookLoginWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ACE27D51FE3F63F0066C3C3 /* FacebookLoginWindowController.xib */; };
@@ -329,7 +328,6 @@
 		9AA1A08721FCB536003C2A9F /* GTLRCalendarService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLRCalendarService.h; sourceTree = "<group>"; };
 		9AA37EC32036976500B23448 /* IntegrationTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationTabController.swift; sourceTree = "<group>"; };
 		9AABEF5321FDA9D800CBC984 /* FacebookEventManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FacebookEventManager.xcodeproj; path = "../../../../FB-OSX/FBLogin/Facebook Mac Core/FaceBookEventManager/FacebookEventManager/FacebookEventManager.xcodeproj"; sourceTree = "<group>"; };
-		9AABEF6621FDAAD800CBC984 /* EKCalendarSyncEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EKCalendarSyncEvent.swift; sourceTree = "<group>"; };
 		9ABE6B5F20826571001CA2D1 /* GoogleEventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleEventManager.swift; sourceTree = "<group>"; };
 		9ACE27D51FE3F63F0066C3C3 /* FacebookLoginWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FacebookLoginWindowController.xib; sourceTree = "<group>"; };
 		9ACE27D71FE3F66B0066C3C3 /* FacebookLoginWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLoginWindowController.swift; sourceTree = "<group>"; };
@@ -424,7 +422,6 @@
 		3FCDE5111F3BA4D000D3C7C0 /* AdvancedCalendar */ = {
 			isa = PBXGroup;
 			children = (
-				9AABEF6521FDAAD800CBC984 /* EventKitExtension */,
 				9A19601B206D17AC00188473 /* Google Event Manager */,
 				9A19601A206D17AB00188473 /* Google Login Manager */,
 				9AD3B8031FE7D4B800210976 /* FacebookEventManager */,
@@ -593,14 +590,6 @@
 				9AABEF5821FDA9D800CBC984 /* FacebookEventManager.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		9AABEF6521FDAAD800CBC984 /* EventKitExtension */ = {
-			isa = PBXGroup;
-			children = (
-				9AABEF6621FDAAD800CBC984 /* EKCalendarSyncEvent.swift */,
-			);
-			path = EventKitExtension;
 			sourceTree = "<group>";
 		};
 		9ACE27D31FE3F5CE0066C3C3 /* FacebookLoginController */ = {
@@ -956,7 +945,6 @@
 				3FCDE5581F3BA56B00D3C7C0 /* calendarTable.swift in Sources */,
 				3FCDE5721F3BA56B00D3C7C0 /* PreferencesStore.swift in Sources */,
 				9ACE27FD1FE4284C0066C3C3 /* NSStoryboard+Utilities.swift in Sources */,
-				9AABEF7021FDAAD900CBC984 /* EKCalendarSyncEvent.swift in Sources */,
 				3FCDE5771F3BA56B00D3C7C0 /* windowDel.swift in Sources */,
 				3FCDE5701F3BA56B00D3C7C0 /* PopUpWindowController.swift in Sources */,
 				9AE4B0AC2033157F008D1B44 /* UserAccountsController.swift in Sources */,
