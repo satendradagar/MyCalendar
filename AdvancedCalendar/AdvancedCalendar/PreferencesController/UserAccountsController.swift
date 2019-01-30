@@ -11,6 +11,7 @@ import Facebook_Mac_Core
 import FacebookEventManager
 import Google_Event_Manager
 
+
 /**
     `ImageCollectionListController` displays a list of `ImageCollection`s in an
     `NSOutlineView`. It can be given a selection handler to report when an 

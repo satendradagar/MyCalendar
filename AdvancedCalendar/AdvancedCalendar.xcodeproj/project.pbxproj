@@ -62,7 +62,6 @@
 		3FCDE57B1F3BA6F100D3C7C0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FCDE5791F3BA6F100D3C7C0 /* MainMenu.xib */; };
 		3FCDE57F1F3BA84000D3C7C0 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCDE57E1F3BA84000D3C7C0 /* ServiceManagement.framework */; };
 		3FCDE5811F3BA84600D3C7C0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCDE5801F3BA84600D3C7C0 /* Cocoa.framework */; };
-		9A0377242076834D00160C75 /* GoogleLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0377232076834D00160C75 /* GoogleLoginManager.swift */; };
 		9A2F52A11FE50DC70062E521 /* NSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F52A01FE50DC70062E521 /* NSUtilities.swift */; };
 		9A3D9B73207A1BDA008A2582 /* GoogleAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3D9B69207A1BD9008A2582 /* GoogleAccount.swift */; };
 		9A3D9B74207A1BDA008A2582 /* GoogleAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A3D9B6A207A1BD9008A2582 /* GoogleAccount.storyboard */; };
@@ -221,7 +220,6 @@
 		3FCDE57A1F3BA6F100D3C7C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		3FCDE57E1F3BA84000D3C7C0 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		3FCDE5801F3BA84600D3C7C0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		9A0377232076834D00160C75 /* GoogleLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLoginManager.swift; sourceTree = "<group>"; };
 		9A2F52A01FE50DC70062E521 /* NSUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUtilities.swift; sourceTree = "<group>"; };
 		9A3D9B69207A1BD9008A2582 /* GoogleAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleAccount.swift; sourceTree = "<group>"; };
 		9A3D9B6A207A1BD9008A2582 /* GoogleAccount.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GoogleAccount.storyboard; sourceTree = "<group>"; };
@@ -325,7 +323,6 @@
 			isa = PBXGroup;
 			children = (
 				9A19601B206D17AC00188473 /* Google Event Manager */,
-				9A19601A206D17AB00188473 /* Google Login Manager */,
 				9AD3B8031FE7D4B800210976 /* FacebookEventManager */,
 				9ACE27D31FE3F5CE0066C3C3 /* FacebookLoginController */,
 				3FCDE5781F3BA5C500D3C7C0 /* AdvancedCalendar.entitlements */,
@@ -401,14 +398,6 @@
 				3FCDE57E1F3BA84000D3C7C0 /* ServiceManagement.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9A19601A206D17AB00188473 /* Google Login Manager */ = {
-			isa = PBXGroup;
-			children = (
-				9A0377232076834D00160C75 /* GoogleLoginManager.swift */,
-			);
-			path = "Google Login Manager";
 			sourceTree = "<group>";
 		};
 		9A19601B206D17AC00188473 /* Google Event Manager */ = {
@@ -742,7 +731,6 @@
 				9ACE27EB1FE40A490066C3C3 /* FBLoginController.swift in Sources */,
 				3FCDE5731F3BA56B00D3C7C0 /* PreferencesWindowController.swift in Sources */,
 				3FCDE5591F3BA56B00D3C7C0 /* CalendarViewController.swift in Sources */,
-				9A0377242076834D00160C75 /* GoogleLoginManager.swift in Sources */,
 				3FCDE5131F3BA4D000D3C7C0 /* AppDelegate.swift in Sources */,
 				3FCDE5761F3BA56B00D3C7C0 /* WhiteView.swift in Sources */,
 				9A88C3F61FE97CC2009BB6DF /* StringISOToDate.swift in Sources */,
