@@ -9,6 +9,7 @@
 import Cocoa
 import Facebook_Mac_Core
 import FacebookEventManager
+import Google_Event_Manager
 
 /**
     `ImageCollectionListController` displays a list of `ImageCollection`s in an

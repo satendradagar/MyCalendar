@@ -63,9 +63,6 @@
 		3FCDE57F1F3BA84000D3C7C0 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCDE57E1F3BA84000D3C7C0 /* ServiceManagement.framework */; };
 		3FCDE5811F3BA84600D3C7C0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCDE5801F3BA84600D3C7C0 /* Cocoa.framework */; };
 		9A0377242076834D00160C75 /* GoogleLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0377232076834D00160C75 /* GoogleLoginManager.swift */; };
-		9A196016206D160A00188473 /* GTLR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A196005206D15E000188473 /* GTLR.framework */; };
-		9A196017206D160A00188473 /* GTLR.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A196005206D15E000188473 /* GTLR.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9A2986A120876E31006EA6E2 /* GoogleEventStoreMaanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2986A020876E31006EA6E2 /* GoogleEventStoreMaanger.swift */; };
 		9A2F52A11FE50DC70062E521 /* NSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F52A01FE50DC70062E521 /* NSUtilities.swift */; };
 		9A3D9B73207A1BDA008A2582 /* GoogleAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3D9B69207A1BD9008A2582 /* GoogleAccount.swift */; };
 		9A3D9B74207A1BDA008A2582 /* GoogleAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A3D9B6A207A1BD9008A2582 /* GoogleAccount.storyboard */; };
@@ -75,13 +72,8 @@
 		9A79681B208BA05200E8654D /* GTMSessionFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A79681C208BA05200E8654D /* GTMSessionFetcher.framework */; };
 		9A79681D208BA08100E8654D /* GTMSessionFetcher.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A79681C208BA05200E8654D /* GTMSessionFetcher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9A88C3F61FE97CC2009BB6DF /* StringISOToDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A88C3F51FE97CC2009BB6DF /* StringISOToDate.swift */; };
-		9AA1A08821FCB536003C2A9F /* GTLRCalendarQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1A08121FCB536003C2A9F /* GTLRCalendarQuery.m */; };
-		9AA1A08921FCB536003C2A9F /* GTLRCalendarObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1A08221FCB536003C2A9F /* GTLRCalendarObjects.m */; };
-		9AA1A08A21FCB536003C2A9F /* GTLRCalendarService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1A08421FCB536003C2A9F /* GTLRCalendarService.m */; };
-		9AA1A0BD21FCC0AF003C2A9F /* Facebook_Mac_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA1A06921FCAF38003C2A9F /* Facebook_Mac_Core.framework */; };
 		9AA37EC42036976500B23448 /* IntegrationTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA37EC32036976500B23448 /* IntegrationTabController.swift */; };
 		9AAFA3F320D821AF008450C7 /* AppAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A796819208B9FEE00E8654D /* AppAuth.framework */; };
-		9ABE6B6020826571001CA2D1 /* GoogleEventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABE6B5F20826571001CA2D1 /* GoogleEventManager.swift */; };
 		9ACE27D61FE3F63F0066C3C3 /* FacebookLoginWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ACE27D51FE3F63F0066C3C3 /* FacebookLoginWindowController.xib */; };
 		9ACE27D81FE3F66B0066C3C3 /* FacebookLoginWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACE27D71FE3F66B0066C3C3 /* FacebookLoginWindowController.swift */; };
 		9ACE27EA1FE40A490066C3C3 /* FacebookLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACE27E41FE40A490066C3C3 /* FacebookLoginController.swift */; };
@@ -97,6 +89,7 @@
 		9ACE27FC1FE4284C0066C3C3 /* SeagueAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACE27F51FE4284C0066C3C3 /* SeagueAnimator.swift */; };
 		9ACE27FD1FE4284C0066C3C3 /* NSStoryboard+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACE27F61FE4284C0066C3C3 /* NSStoryboard+Utilities.swift */; };
 		9ACE27FE1FE4284C0066C3C3 /* NSViewController+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACE27F71FE4284C0066C3C3 /* NSViewController+Utilities.swift */; };
+		9AD8C7B822015BF6009D0833 /* Google_Event_Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD8C7B522015BB3009D0833 /* Google_Event_Manager.framework */; };
 		9ADE7B7D1FF3F04D00AE8885 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ADE7B7E1FF3F04D00AE8885 /* FBSDKCoreKit.framework */; };
 		9ADE7B7F1FF3F05900AE8885 /* FBSDKCoreKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9ADE7B7E1FF3F04D00AE8885 /* FBSDKCoreKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9ADE7B8A1FF3F3D000AE8885 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ADE7B8B1FF3F3D000AE8885 /* Bolts.framework */; };
@@ -111,76 +104,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9A196004206D15E000188473 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9A195FF8206D15E000188473 /* GTLRCore.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4F38F6A60B66E91D00B24B81;
-			remoteInfo = GTLROSXCore;
-		};
-		9A196006206D15E000188473 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9A195FF8206D15E000188473 /* GTLRCore.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F4469DB41C40229D00BCFAA1;
-			remoteInfo = GTLRiOSCore;
-		};
-		9A196008206D15E000188473 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9A195FF8206D15E000188473 /* GTLRCore.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F4A8723C1DAD1AA400D69E09;
-			remoteInfo = GTLRtvOSCore;
-		};
-		9A19600A206D15E000188473 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9A195FF8206D15E000188473 /* GTLRCore.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F4B18FE41F10035400E55018;
-			remoteInfo = GTLRwatchOSCore;
-		};
-		9A19600C206D15E000188473 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9A195FF8206D15E000188473 /* GTLRCore.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4F12027D11A4CA2F00BEB470;
-			remoteInfo = GTLROSXUnitTests;
-		};
-		9A19600E206D15E000188473 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9A195FF8206D15E000188473 /* GTLRCore.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F4368F721B8233BF00E17643;
-			remoteInfo = GTLRiOSUnitTests;
-		};
-		9A196010206D15E000188473 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9A195FF8206D15E000188473 /* GTLRCore.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F4A8727D1DAD1FA000D69E09;
-			remoteInfo = GTLRtvOSUnitTests;
-		};
-		9A196012206D15E000188473 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9A195FF8206D15E000188473 /* GTLRCore.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4F1AD9020B71603F00DC0485;
-			remoteInfo = OSXDevTool;
-		};
-		9A196014206D15F200188473 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9A195FF8206D15E000188473 /* GTLRCore.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 4F38F6A50B66E91D00B24B81;
-			remoteInfo = GTLROSXCore;
-		};
-		9A196018206D160A00188473 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9A195FF8206D15E000188473 /* GTLRCore.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 4F38F6A50B66E91D00B24B81;
-			remoteInfo = GTLROSXCore;
-		};
 		9A4C1CBA21FDB0B3000D76EC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9AABEF5321FDA9D800CBC984 /* FacebookEventManager.xcodeproj */;
@@ -188,33 +111,26 @@
 			remoteGlobalIDString = 9AABEEF421FD9C4F00CBC984;
 			remoteInfo = FacebookEventManager;
 		};
-		9AA1A06821FCAF38003C2A9F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9AA1A06221FCAF38003C2A9F /* Facebook Mac Core.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EA2DF6991FA0875300996F05;
-			remoteInfo = "Facebook Mac Core";
-		};
-		9AA1A06A21FCAF38003C2A9F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9AA1A06221FCAF38003C2A9F /* Facebook Mac Core.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EA2DF6A21FA0875300996F05;
-			remoteInfo = "Facebook Mac CoreTests";
-		};
-		9AA1A0BE21FCC0BD003C2A9F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9AA1A06221FCAF38003C2A9F /* Facebook Mac Core.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = EA2DF6981FA0875300996F05;
-			remoteInfo = "Facebook Mac Core";
-		};
 		9AABEF5721FDA9D800CBC984 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9AABEF5321FDA9D800CBC984 /* FacebookEventManager.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 9AABEEF521FD9C4F00CBC984;
 			remoteInfo = FacebookEventManager;
+		};
+		9AD8C7B422015BB3009D0833 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AD8C7AA22015BB3009D0833 /* Google Event Manager.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9AF68FA821FE0E8B00044A96;
+			remoteInfo = "Google Event Manager";
+		};
+		9AD8C7B622015BCA009D0833 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AD8C7AA22015BB3009D0833 /* Google Event Manager.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9AF68FA721FE0E8B00044A96;
+			remoteInfo = "Google Event Manager";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -238,7 +154,6 @@
 				9A79681D208BA08100E8654D /* GTMSessionFetcher.framework in CopyFiles */,
 				9ADE7B8C1FF3F3D800AE8885 /* Bolts.framework in CopyFiles */,
 				9ADE7B7F1FF3F05900AE8885 /* FBSDKCoreKit.framework in CopyFiles */,
-				9A196017206D160A00188473 /* GTLR.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,8 +222,6 @@
 		3FCDE57E1F3BA84000D3C7C0 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		3FCDE5801F3BA84600D3C7C0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		9A0377232076834D00160C75 /* GoogleLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLoginManager.swift; sourceTree = "<group>"; };
-		9A195FF8206D15E000188473 /* GTLRCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GTLRCore.xcodeproj; path = "../Google-Mac/Source/GTLRCore.xcodeproj"; sourceTree = "<group>"; };
-		9A2986A020876E31006EA6E2 /* GoogleEventStoreMaanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleEventStoreMaanger.swift; sourceTree = "<group>"; };
 		9A2F52A01FE50DC70062E521 /* NSUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUtilities.swift; sourceTree = "<group>"; };
 		9A3D9B69207A1BD9008A2582 /* GoogleAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleAccount.swift; sourceTree = "<group>"; };
 		9A3D9B6A207A1BD9008A2582 /* GoogleAccount.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GoogleAccount.storyboard; sourceTree = "<group>"; };
@@ -318,17 +231,8 @@
 		9A796819208B9FEE00E8654D /* AppAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A79681C208BA05200E8654D /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A88C3F51FE97CC2009BB6DF /* StringISOToDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringISOToDate.swift; sourceTree = "<group>"; };
-		9AA1A06221FCAF38003C2A9F /* Facebook Mac Core.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Facebook Mac Core.xcodeproj"; path = "../../FB-OSX/FBLogin/Facebook Mac Core/Facebook Mac Core/Facebook Mac Core.xcodeproj"; sourceTree = "<group>"; };
-		9AA1A08121FCB536003C2A9F /* GTLRCalendarQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLRCalendarQuery.m; sourceTree = "<group>"; };
-		9AA1A08221FCB536003C2A9F /* GTLRCalendarObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLRCalendarObjects.m; sourceTree = "<group>"; };
-		9AA1A08321FCB536003C2A9F /* GTLRCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLRCalendar.h; sourceTree = "<group>"; };
-		9AA1A08421FCB536003C2A9F /* GTLRCalendarService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLRCalendarService.m; sourceTree = "<group>"; };
-		9AA1A08521FCB536003C2A9F /* GTLRCalendarObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLRCalendarObjects.h; sourceTree = "<group>"; };
-		9AA1A08621FCB536003C2A9F /* GTLRCalendarQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLRCalendarQuery.h; sourceTree = "<group>"; };
-		9AA1A08721FCB536003C2A9F /* GTLRCalendarService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLRCalendarService.h; sourceTree = "<group>"; };
 		9AA37EC32036976500B23448 /* IntegrationTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationTabController.swift; sourceTree = "<group>"; };
 		9AABEF5321FDA9D800CBC984 /* FacebookEventManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FacebookEventManager.xcodeproj; path = "../../../../FB-OSX/FBLogin/Facebook Mac Core/FaceBookEventManager/FacebookEventManager/FacebookEventManager.xcodeproj"; sourceTree = "<group>"; };
-		9ABE6B5F20826571001CA2D1 /* GoogleEventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleEventManager.swift; sourceTree = "<group>"; };
 		9ACE27D51FE3F63F0066C3C3 /* FacebookLoginWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FacebookLoginWindowController.xib; sourceTree = "<group>"; };
 		9ACE27D71FE3F66B0066C3C3 /* FacebookLoginWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLoginWindowController.swift; sourceTree = "<group>"; };
 		9ACE27E31FE40A490066C3C3 /* FacebookWebLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookWebLogin.h; sourceTree = "<group>"; };
@@ -345,6 +249,7 @@
 		9ACE27F51FE4284C0066C3C3 /* SeagueAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeagueAnimator.swift; sourceTree = "<group>"; };
 		9ACE27F61FE4284C0066C3C3 /* NSStoryboard+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSStoryboard+Utilities.swift"; sourceTree = "<group>"; };
 		9ACE27F71FE4284C0066C3C3 /* NSViewController+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSViewController+Utilities.swift"; sourceTree = "<group>"; };
+		9AD8C7AA22015BB3009D0833 /* Google Event Manager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Google Event Manager.xcodeproj"; path = "../../../../FB-OSX/Google Event Manager/Google Event Manager.xcodeproj"; sourceTree = "<group>"; };
 		9ADE7B7E1FF3F04D00AE8885 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ADE7B8B1FF3F3D000AE8885 /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AE4B0A92033157E008D1B44 /* UserAccountsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountsController.swift; sourceTree = "<group>"; };
@@ -370,14 +275,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AD8C7B822015BF6009D0833 /* Google_Event_Manager.framework in Frameworks */,
 				9A4C1CC521FDB0BD000D76EC /* FacebookEventManager.framework in Frameworks */,
-				9AA1A0BD21FCC0AF003C2A9F /* Facebook_Mac_Core.framework in Frameworks */,
 				9ADE7B8A1FF3F3D000AE8885 /* Bolts.framework in Frameworks */,
 				9ADE7B7D1FF3F04D00AE8885 /* FBSDKCoreKit.framework in Frameworks */,
 				3FCDE5811F3BA84600D3C7C0 /* Cocoa.framework in Frameworks */,
 				3FCDE57F1F3BA84000D3C7C0 /* ServiceManagement.framework in Frameworks */,
 				9A79681B208BA05200E8654D /* GTMSessionFetcher.framework in Frameworks */,
-				9A196016206D160A00188473 /* GTLR.framework in Frameworks */,
 				9AAFA3F320D821AF008450C7 /* AppAuth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,8 +305,6 @@
 			isa = PBXGroup;
 			children = (
 				9A3E5A6220728FAA0058C45B /* AdvancedCalendar-Bridging-Header.h */,
-				9A195FF8206D15E000188473 /* GTLRCore.xcodeproj */,
-				9AA1A06221FCAF38003C2A9F /* Facebook Mac Core.xcodeproj */,
 				3FCDE5111F3BA4D000D3C7C0 /* AdvancedCalendar */,
 				3FA457EE1F3BAD28007D8607 /* LauncherApplication */,
 				3FCDE5101F3BA4D000D3C7C0 /* Products */,
@@ -501,21 +403,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9A195FF9206D15E000188473 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9A196005206D15E000188473 /* GTLR.framework */,
-				9A196007206D15E000188473 /* GTLR.framework */,
-				9A196009206D15E000188473 /* GTLR.framework */,
-				9A19600B206D15E000188473 /* GTLRwatchOSCore.framework */,
-				9A19600D206D15E000188473 /* GTLROSXUnitTests.xctest */,
-				9A19600F206D15E000188473 /* GTLRiOSUnitTests.xctest */,
-				9A196011206D15E000188473 /* GTLRtvOSUnitTests.xctest */,
-				9A196013206D15E000188473 /* OSXDevTool */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		9A19601A206D17AB00188473 /* Google Login Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -527,9 +414,7 @@
 		9A19601B206D17AC00188473 /* Google Event Manager */ = {
 			isa = PBXGroup;
 			children = (
-				9A3E5A632072972C0058C45B /* Calendar */,
-				9ABE6B5F20826571001CA2D1 /* GoogleEventManager.swift */,
-				9A2986A020876E31006EA6E2 /* GoogleEventStoreMaanger.swift */,
+				9AD8C7AA22015BB3009D0833 /* Google Event Manager.xcodeproj */,
 			);
 			path = "Google Event Manager";
 			sourceTree = "<group>";
@@ -541,47 +426,6 @@
 				9A3D9B6A207A1BD9008A2582 /* GoogleAccount.storyboard */,
 			);
 			path = GoogleAccount;
-			sourceTree = "<group>";
-		};
-		9A3E5A632072972C0058C45B /* Calendar */ = {
-			isa = PBXGroup;
-			children = (
-				9AA1A07F21FCB536003C2A9F /* GoogleServices */,
-			);
-			name = Calendar;
-			path = "../../../../../../Downloads/google-api-objectivec-client-for-rest-master/Source/GeneratedServices/Calendar";
-			sourceTree = "<group>";
-		};
-		9AA1A06321FCAF38003C2A9F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9AA1A06921FCAF38003C2A9F /* Facebook_Mac_Core.framework */,
-				9AA1A06B21FCAF38003C2A9F /* Facebook Mac CoreTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		9AA1A07F21FCB536003C2A9F /* GoogleServices */ = {
-			isa = PBXGroup;
-			children = (
-				9AA1A08021FCB536003C2A9F /* Calendar */,
-			);
-			name = GoogleServices;
-			path = "AdvancedCalendar/Google Event Manager/GoogleServices";
-			sourceTree = SOURCE_ROOT;
-		};
-		9AA1A08021FCB536003C2A9F /* Calendar */ = {
-			isa = PBXGroup;
-			children = (
-				9AA1A08121FCB536003C2A9F /* GTLRCalendarQuery.m */,
-				9AA1A08221FCB536003C2A9F /* GTLRCalendarObjects.m */,
-				9AA1A08321FCB536003C2A9F /* GTLRCalendar.h */,
-				9AA1A08421FCB536003C2A9F /* GTLRCalendarService.m */,
-				9AA1A08521FCB536003C2A9F /* GTLRCalendarObjects.h */,
-				9AA1A08621FCB536003C2A9F /* GTLRCalendarQuery.h */,
-				9AA1A08721FCB536003C2A9F /* GTLRCalendarService.h */,
-			);
-			path = Calendar;
 			sourceTree = "<group>";
 		};
 		9AABEF5421FDA9D800CBC984 /* Products */ = {
@@ -643,6 +487,14 @@
 			path = FacebookEventManager;
 			sourceTree = "<group>";
 		};
+		9AD8C7AB22015BB3009D0833 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9AD8C7B522015BB3009D0833 /* Google_Event_Manager.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		9AE4B0A82033157E008D1B44 /* PreferencesController */ = {
 			isa = PBXGroup;
 			children = (
@@ -698,10 +550,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				9AD8C7B722015BCA009D0833 /* PBXTargetDependency */,
 				9A4C1CBB21FDB0B3000D76EC /* PBXTargetDependency */,
-				9AA1A0BF21FCC0BD003C2A9F /* PBXTargetDependency */,
-				9A196015206D15F200188473 /* PBXTargetDependency */,
-				9A196019206D160A00188473 /* PBXTargetDependency */,
 			);
 			name = AdvancedCalendar;
 			productName = AdvancedCalendar;
@@ -752,16 +602,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 9AA1A06321FCAF38003C2A9F /* Products */;
-					ProjectRef = 9AA1A06221FCAF38003C2A9F /* Facebook Mac Core.xcodeproj */;
-				},
-				{
 					ProductGroup = 9AABEF5421FDA9D800CBC984 /* Products */;
 					ProjectRef = 9AABEF5321FDA9D800CBC984 /* FacebookEventManager.xcodeproj */;
 				},
 				{
-					ProductGroup = 9A195FF9206D15E000188473 /* Products */;
-					ProjectRef = 9A195FF8206D15E000188473 /* GTLRCore.xcodeproj */;
+					ProductGroup = 9AD8C7AB22015BB3009D0833 /* Products */;
+					ProjectRef = 9AD8C7AA22015BB3009D0833 /* Google Event Manager.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -773,81 +619,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		9A196005206D15E000188473 /* GTLR.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = GTLR.framework;
-			remoteRef = 9A196004206D15E000188473 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9A196007206D15E000188473 /* GTLR.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = GTLR.framework;
-			remoteRef = 9A196006206D15E000188473 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9A196009206D15E000188473 /* GTLR.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = GTLR.framework;
-			remoteRef = 9A196008206D15E000188473 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9A19600B206D15E000188473 /* GTLRwatchOSCore.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = GTLRwatchOSCore.framework;
-			remoteRef = 9A19600A206D15E000188473 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9A19600D206D15E000188473 /* GTLROSXUnitTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = GTLROSXUnitTests.xctest;
-			remoteRef = 9A19600C206D15E000188473 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9A19600F206D15E000188473 /* GTLRiOSUnitTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = GTLRiOSUnitTests.xctest;
-			remoteRef = 9A19600E206D15E000188473 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9A196011206D15E000188473 /* GTLRtvOSUnitTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = GTLRtvOSUnitTests.xctest;
-			remoteRef = 9A196010206D15E000188473 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9A196013206D15E000188473 /* OSXDevTool */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = OSXDevTool;
-			remoteRef = 9A196012206D15E000188473 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9AA1A06921FCAF38003C2A9F /* Facebook_Mac_Core.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Facebook_Mac_Core.framework;
-			remoteRef = 9AA1A06821FCAF38003C2A9F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9AA1A06B21FCAF38003C2A9F /* Facebook Mac CoreTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Facebook Mac CoreTests.xctest";
-			remoteRef = 9AA1A06A21FCAF38003C2A9F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		9AABEF5821FDA9D800CBC984 /* FacebookEventManager.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = FacebookEventManager.framework;
 			remoteRef = 9AABEF5721FDA9D800CBC984 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9AD8C7B522015BB3009D0833 /* Google_Event_Manager.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Google_Event_Manager.framework;
+			remoteRef = 9AD8C7B422015BB3009D0833 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -923,12 +706,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA15C0A41F77AA8E000BA9D2 /* DoubleClickButton.swift in Sources */,
-				9AA1A08821FCB536003C2A9F /* GTLRCalendarQuery.m in Sources */,
 				9ACE27D81FE3F66B0066C3C3 /* FacebookLoginWindowController.swift in Sources */,
 				9ACE27EC1FE40A490066C3C3 /* FBAuthToken.swift in Sources */,
 				3FCDE5551F3BA56B00D3C7C0 /* ButtonStyle.swift in Sources */,
 				9A4397CA203E7D0900E45042 /* AccountDetailsController.swift in Sources */,
-				9AA1A08A21FCB536003C2A9F /* GTLRCalendarService.m in Sources */,
 				9AE4B0AF203316F3008D1B44 /* PreferenceAccount.swift in Sources */,
 				9A559F942042C4B700C84C48 /* StringOperations.swift in Sources */,
 				9ACE27EE1FE40A490066C3C3 /* LoginKitURLs.swift in Sources */,
@@ -951,7 +732,6 @@
 				9ACE27FA1FE4284C0066C3C3 /* ContentManagerViewControllerHolder.swift in Sources */,
 				3FCDE5651F3BA56B00D3C7C0 /* EventWindowController.swift in Sources */,
 				9ACE27F91FE4284C0066C3C3 /* BackForwardViewController.swift in Sources */,
-				9AA1A08921FCB536003C2A9F /* GTLRCalendarObjects.m in Sources */,
 				9A3D9B73207A1BDA008A2582 /* GoogleAccount.swift in Sources */,
 				9AA37EC42036976500B23448 /* IntegrationTabController.swift in Sources */,
 				3FCDE5571F3BA56B00D3C7C0 /* calendarData.swift in Sources */,
@@ -962,10 +742,8 @@
 				9ACE27EB1FE40A490066C3C3 /* FBLoginController.swift in Sources */,
 				3FCDE5731F3BA56B00D3C7C0 /* PreferencesWindowController.swift in Sources */,
 				3FCDE5591F3BA56B00D3C7C0 /* CalendarViewController.swift in Sources */,
-				9A2986A120876E31006EA6E2 /* GoogleEventStoreMaanger.swift in Sources */,
 				9A0377242076834D00160C75 /* GoogleLoginManager.swift in Sources */,
 				3FCDE5131F3BA4D000D3C7C0 /* AppDelegate.swift in Sources */,
-				9ABE6B6020826571001CA2D1 /* GoogleEventManager.swift in Sources */,
 				3FCDE5761F3BA56B00D3C7C0 /* WhiteView.swift in Sources */,
 				9A88C3F61FE97CC2009BB6DF /* StringISOToDate.swift in Sources */,
 			);
@@ -974,25 +752,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9A196015206D15F200188473 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = GTLROSXCore;
-			targetProxy = 9A196014206D15F200188473 /* PBXContainerItemProxy */;
-		};
-		9A196019206D160A00188473 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = GTLROSXCore;
-			targetProxy = 9A196018206D160A00188473 /* PBXContainerItemProxy */;
-		};
 		9A4C1CBB21FDB0B3000D76EC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FacebookEventManager;
 			targetProxy = 9A4C1CBA21FDB0B3000D76EC /* PBXContainerItemProxy */;
 		};
-		9AA1A0BF21FCC0BD003C2A9F /* PBXTargetDependency */ = {
+		9AD8C7B722015BCA009D0833 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Facebook Mac Core";
-			targetProxy = 9AA1A0BE21FCC0BD003C2A9F /* PBXContainerItemProxy */;
+			name = "Google Event Manager";
+			targetProxy = 9AD8C7B622015BCA009D0833 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

@@ -7,32 +7,32 @@
 		<key>OS X Framework.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>15</integer>
+			<integer>31</integer>
 		</dict>
 		<key>OSXTestApp.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>16</integer>
+			<integer>33</integer>
 		</dict>
 		<key>iOS Framework.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>13</integer>
+			<integer>27</integer>
 		</dict>
 		<key>iOSTestApp.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>14</integer>
+			<integer>29</integer>
 		</dict>
 		<key>tvOS Framework.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>17</integer>
+			<integer>35</integer>
 		</dict>
 		<key>watchOS Framework.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>18</integer>
+			<integer>37</integer>
 		</dict>
 	</dict>
 </dict>

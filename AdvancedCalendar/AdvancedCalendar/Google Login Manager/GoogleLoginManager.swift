@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Google_Event_Manager
 
 // This is the URL shown users after completing the OAuth flow. This is an information page only and
 // is not part of the authorization protocol. You can replace it with any URL you like.
