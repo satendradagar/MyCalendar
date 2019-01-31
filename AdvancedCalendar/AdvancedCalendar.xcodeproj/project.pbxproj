@@ -62,32 +62,14 @@
 		3FCDE57B1F3BA6F100D3C7C0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FCDE5791F3BA6F100D3C7C0 /* MainMenu.xib */; };
 		3FCDE57F1F3BA84000D3C7C0 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCDE57E1F3BA84000D3C7C0 /* ServiceManagement.framework */; };
 		3FCDE5811F3BA84600D3C7C0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCDE5801F3BA84600D3C7C0 /* Cocoa.framework */; };
-		9A2F52A11FE50DC70062E521 /* NSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2F52A01FE50DC70062E521 /* NSUtilities.swift */; };
 		9A3D9B73207A1BDA008A2582 /* GoogleAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3D9B69207A1BD9008A2582 /* GoogleAccount.swift */; };
 		9A3D9B74207A1BDA008A2582 /* GoogleAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A3D9B6A207A1BD9008A2582 /* GoogleAccount.storyboard */; };
 		9A4397CA203E7D0900E45042 /* AccountDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4397C9203E7D0900E45042 /* AccountDetailsController.swift */; };
 		9A4C1CC521FDB0BD000D76EC /* FacebookEventManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AABEF5821FDA9D800CBC984 /* FacebookEventManager.framework */; };
-		9A559F942042C4B700C84C48 /* StringOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A559F932042C4B700C84C48 /* StringOperations.swift */; };
 		9A79681B208BA05200E8654D /* GTMSessionFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A79681C208BA05200E8654D /* GTMSessionFetcher.framework */; };
 		9A79681D208BA08100E8654D /* GTMSessionFetcher.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9A79681C208BA05200E8654D /* GTMSessionFetcher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9A88C3F61FE97CC2009BB6DF /* StringISOToDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A88C3F51FE97CC2009BB6DF /* StringISOToDate.swift */; };
 		9AA37EC42036976500B23448 /* IntegrationTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA37EC32036976500B23448 /* IntegrationTabController.swift */; };
 		9AAFA3F320D821AF008450C7 /* AppAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A796819208B9FEE00E8654D /* AppAuth.framework */; };
-		9ACE27D61FE3F63F0066C3C3 /* FacebookLoginWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ACE27D51FE3F63F0066C3C3 /* FacebookLoginWindowController.xib */; };
-		9ACE27D81FE3F66B0066C3C3 /* FacebookLoginWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACE27D71FE3F66B0066C3C3 /* FacebookLoginWindowController.swift */; };
-		9ACE27EA1FE40A490066C3C3 /* FacebookLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACE27E41FE40A490066C3C3 /* FacebookLoginController.swift */; };
-		9ACE27EB1FE40A490066C3C3 /* FBLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACE27E51FE40A490066C3C3 /* FBLoginController.swift */; };
-		9ACE27EC1FE40A490066C3C3 /* FBAuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACE27E61FE40A490066C3C3 /* FBAuthToken.swift */; };
-		9ACE27ED1FE40A490066C3C3 /* FacebookLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ACE27E71FE40A490066C3C3 /* FacebookLoginController.xib */; };
-		9ACE27EE1FE40A490066C3C3 /* LoginKitURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACE27E81FE40A490066C3C3 /* LoginKitURLs.swift */; };
-		9ACE27EF1FE40A490066C3C3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9ACE27E91FE40A490066C3C3 /* Info.plist */; };
-		9ACE27F81FE4284C0066C3C3 /* SeagueBetweenEmbedded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACE27F11FE4284C0066C3C3 /* SeagueBetweenEmbedded.swift */; };
-		9ACE27F91FE4284C0066C3C3 /* BackForwardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACE27F21FE4284C0066C3C3 /* BackForwardViewController.swift */; };
-		9ACE27FA1FE4284C0066C3C3 /* ContentManagerViewControllerHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACE27F31FE4284C0066C3C3 /* ContentManagerViewControllerHolder.swift */; };
-		9ACE27FB1FE4284C0066C3C3 /* ContentManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACE27F41FE4284C0066C3C3 /* ContentManagerViewController.swift */; };
-		9ACE27FC1FE4284C0066C3C3 /* SeagueAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACE27F51FE4284C0066C3C3 /* SeagueAnimator.swift */; };
-		9ACE27FD1FE4284C0066C3C3 /* NSStoryboard+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACE27F61FE4284C0066C3C3 /* NSStoryboard+Utilities.swift */; };
-		9ACE27FE1FE4284C0066C3C3 /* NSViewController+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACE27F71FE4284C0066C3C3 /* NSViewController+Utilities.swift */; };
 		9AD8C7B822015BF6009D0833 /* Google_Event_Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD8C7B522015BB3009D0833 /* Google_Event_Manager.framework */; };
 		9ADE7B7D1FF3F04D00AE8885 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ADE7B7E1FF3F04D00AE8885 /* FBSDKCoreKit.framework */; };
 		9ADE7B7F1FF3F05900AE8885 /* FBSDKCoreKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9ADE7B7E1FF3F04D00AE8885 /* FBSDKCoreKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -220,33 +202,14 @@
 		3FCDE57A1F3BA6F100D3C7C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		3FCDE57E1F3BA84000D3C7C0 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		3FCDE5801F3BA84600D3C7C0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		9A2F52A01FE50DC70062E521 /* NSUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUtilities.swift; sourceTree = "<group>"; };
 		9A3D9B69207A1BD9008A2582 /* GoogleAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleAccount.swift; sourceTree = "<group>"; };
 		9A3D9B6A207A1BD9008A2582 /* GoogleAccount.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GoogleAccount.storyboard; sourceTree = "<group>"; };
 		9A3E5A6220728FAA0058C45B /* AdvancedCalendar-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AdvancedCalendar-Bridging-Header.h"; sourceTree = "<group>"; };
 		9A4397C9203E7D0900E45042 /* AccountDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsController.swift; sourceTree = "<group>"; };
-		9A559F932042C4B700C84C48 /* StringOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringOperations.swift; sourceTree = "<group>"; };
 		9A796819208B9FEE00E8654D /* AppAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A79681C208BA05200E8654D /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A88C3F51FE97CC2009BB6DF /* StringISOToDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringISOToDate.swift; sourceTree = "<group>"; };
 		9AA37EC32036976500B23448 /* IntegrationTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationTabController.swift; sourceTree = "<group>"; };
 		9AABEF5321FDA9D800CBC984 /* FacebookEventManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FacebookEventManager.xcodeproj; path = "../../../../FB-OSX/FBLogin/Facebook Mac Core/FaceBookEventManager/FacebookEventManager/FacebookEventManager.xcodeproj"; sourceTree = "<group>"; };
-		9ACE27D51FE3F63F0066C3C3 /* FacebookLoginWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FacebookLoginWindowController.xib; sourceTree = "<group>"; };
-		9ACE27D71FE3F66B0066C3C3 /* FacebookLoginWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLoginWindowController.swift; sourceTree = "<group>"; };
-		9ACE27E31FE40A490066C3C3 /* FacebookWebLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookWebLogin.h; sourceTree = "<group>"; };
-		9ACE27E41FE40A490066C3C3 /* FacebookLoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookLoginController.swift; sourceTree = "<group>"; };
-		9ACE27E51FE40A490066C3C3 /* FBLoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBLoginController.swift; sourceTree = "<group>"; };
-		9ACE27E61FE40A490066C3C3 /* FBAuthToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAuthToken.swift; sourceTree = "<group>"; };
-		9ACE27E71FE40A490066C3C3 /* FacebookLoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FacebookLoginController.xib; sourceTree = "<group>"; };
-		9ACE27E81FE40A490066C3C3 /* LoginKitURLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginKitURLs.swift; sourceTree = "<group>"; };
-		9ACE27E91FE40A490066C3C3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9ACE27F11FE4284C0066C3C3 /* SeagueBetweenEmbedded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeagueBetweenEmbedded.swift; sourceTree = "<group>"; };
-		9ACE27F21FE4284C0066C3C3 /* BackForwardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackForwardViewController.swift; sourceTree = "<group>"; };
-		9ACE27F31FE4284C0066C3C3 /* ContentManagerViewControllerHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentManagerViewControllerHolder.swift; sourceTree = "<group>"; };
-		9ACE27F41FE4284C0066C3C3 /* ContentManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentManagerViewController.swift; sourceTree = "<group>"; };
-		9ACE27F51FE4284C0066C3C3 /* SeagueAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeagueAnimator.swift; sourceTree = "<group>"; };
-		9ACE27F61FE4284C0066C3C3 /* NSStoryboard+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSStoryboard+Utilities.swift"; sourceTree = "<group>"; };
-		9ACE27F71FE4284C0066C3C3 /* NSViewController+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSViewController+Utilities.swift"; sourceTree = "<group>"; };
 		9AD8C7AA22015BB3009D0833 /* Google Event Manager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Google Event Manager.xcodeproj"; path = "../../../../FB-OSX/Google Event Manager/Google Event Manager.xcodeproj"; sourceTree = "<group>"; };
 		9ADE7B7E1FF3F04D00AE8885 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ADE7B8B1FF3F3D000AE8885 /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -428,45 +391,9 @@
 		9ACE27D31FE3F5CE0066C3C3 /* FacebookLoginController */ = {
 			isa = PBXGroup;
 			children = (
-				9ACE27E21FE40A490066C3C3 /* FacebookWebLogin */,
-				9ACE27D51FE3F63F0066C3C3 /* FacebookLoginWindowController.xib */,
-				9ACE27D71FE3F66B0066C3C3 /* FacebookLoginWindowController.swift */,
 			);
 			path = FacebookLoginController;
 			sourceTree = "<group>";
-		};
-		9ACE27E21FE40A490066C3C3 /* FacebookWebLogin */ = {
-			isa = PBXGroup;
-			children = (
-				9ACE27F01FE4284C0066C3C3 /* Categories and Utilities */,
-				9ACE27E31FE40A490066C3C3 /* FacebookWebLogin.h */,
-				9ACE27E41FE40A490066C3C3 /* FacebookLoginController.swift */,
-				9ACE27E51FE40A490066C3C3 /* FBLoginController.swift */,
-				9ACE27E61FE40A490066C3C3 /* FBAuthToken.swift */,
-				9ACE27E71FE40A490066C3C3 /* FacebookLoginController.xib */,
-				9ACE27E81FE40A490066C3C3 /* LoginKitURLs.swift */,
-				9ACE27E91FE40A490066C3C3 /* Info.plist */,
-			);
-			path = FacebookWebLogin;
-			sourceTree = "<group>";
-		};
-		9ACE27F01FE4284C0066C3C3 /* Categories and Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				9ACE27F11FE4284C0066C3C3 /* SeagueBetweenEmbedded.swift */,
-				9ACE27F21FE4284C0066C3C3 /* BackForwardViewController.swift */,
-				9ACE27F31FE4284C0066C3C3 /* ContentManagerViewControllerHolder.swift */,
-				9A88C3F51FE97CC2009BB6DF /* StringISOToDate.swift */,
-				9ACE27F41FE4284C0066C3C3 /* ContentManagerViewController.swift */,
-				9ACE27F51FE4284C0066C3C3 /* SeagueAnimator.swift */,
-				9ACE27F61FE4284C0066C3C3 /* NSStoryboard+Utilities.swift */,
-				9ACE27F71FE4284C0066C3C3 /* NSViewController+Utilities.swift */,
-				9A2F52A01FE50DC70062E521 /* NSUtilities.swift */,
-				9A559F932042C4B700C84C48 /* StringOperations.swift */,
-			);
-			name = "Categories and Utilities";
-			path = "AdvancedCalendar/FacebookLoginController/Categories and Utilities";
-			sourceTree = SOURCE_ROOT;
 		};
 		9AD3B8031FE7D4B800210976 /* FacebookEventManager */ = {
 			isa = PBXGroup;
@@ -649,7 +576,6 @@
 				9AFE5E63203C8C29009B9989 /* FacebookAccount.storyboard in Resources */,
 				3FCDE56A1F3BA56B00D3C7C0 /* MacOsCalendar50.png in Resources */,
 				3FCDE54F1F3BA56B00D3C7C0 /* Arrow left 60.png in Resources */,
-				9ACE27D61FE3F63F0066C3C3 /* FacebookLoginWindowController.xib in Resources */,
 				3FCDE55C1F3BA56B00D3C7C0 /* Cog Small55.png in Resources */,
 				3FCDE54D1F3BA56B00D3C7C0 /* Arrow left 50.png in Resources */,
 				3FA457E41F3BAADB007D8607 /* Event_Point_4px.png in Resources */,
@@ -658,9 +584,7 @@
 				3FCDE55A1F3BA56B00D3C7C0 /* CalendarViewController.xib in Resources */,
 				3FCDE56B1F3BA56B00D3C7C0 /* MacOsCalendar55.png in Resources */,
 				3FCDE5521F3BA56B00D3C7C0 /* Arrow right 60.png in Resources */,
-				9ACE27ED1FE40A490066C3C3 /* FacebookLoginController.xib in Resources */,
 				3FCDE5611F3BA56B00D3C7C0 /* currentDateCircle_55px.png in Resources */,
-				9ACE27EF1FE40A490066C3C3 /* Info.plist in Resources */,
 				EA0FE8D71F7A08D600582D53 /* Lilius App Icon.icns in Resources */,
 				3FCDE55F1F3BA56B00D3C7C0 /* CreateEvent.xib in Resources */,
 				3FCDE5501F3BA56B00D3C7C0 /* Arrow right 50.png in Resources */,
@@ -695,45 +619,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA15C0A41F77AA8E000BA9D2 /* DoubleClickButton.swift in Sources */,
-				9ACE27D81FE3F66B0066C3C3 /* FacebookLoginWindowController.swift in Sources */,
-				9ACE27EC1FE40A490066C3C3 /* FBAuthToken.swift in Sources */,
 				3FCDE5551F3BA56B00D3C7C0 /* ButtonStyle.swift in Sources */,
 				9A4397CA203E7D0900E45042 /* AccountDetailsController.swift in Sources */,
 				9AE4B0AF203316F3008D1B44 /* PreferenceAccount.swift in Sources */,
-				9A559F942042C4B700C84C48 /* StringOperations.swift in Sources */,
-				9ACE27EE1FE40A490066C3C3 /* LoginKitURLs.swift in Sources */,
 				3FCDE5671F3BA56B00D3C7C0 /* File.swift in Sources */,
-				9ACE27FC1FE4284C0066C3C3 /* SeagueAnimator.swift in Sources */,
 				3FCDE5631F3BA56B00D3C7C0 /* DatenTimeSettingsBrowser.swift in Sources */,
 				3FCDE5151F3BA4D000D3C7C0 /* ViewController.swift in Sources */,
-				9A2F52A11FE50DC70062E521 /* NSUtilities.swift in Sources */,
-				9ACE27F81FE4284C0066C3C3 /* SeagueBetweenEmbedded.swift in Sources */,
 				3FCDE55E1F3BA56B00D3C7C0 /* CreateEvent.swift in Sources */,
 				9AFE5E65203C8D32009B9989 /* FacebookAccount.swift in Sources */,
-				9ACE27FB1FE4284C0066C3C3 /* ContentManagerViewController.swift in Sources */,
-				9ACE27FE1FE4284C0066C3C3 /* NSViewController+Utilities.swift in Sources */,
 				3FCDE5581F3BA56B00D3C7C0 /* calendarTable.swift in Sources */,
 				3FCDE5721F3BA56B00D3C7C0 /* PreferencesStore.swift in Sources */,
-				9ACE27FD1FE4284C0066C3C3 /* NSStoryboard+Utilities.swift in Sources */,
 				3FCDE5771F3BA56B00D3C7C0 /* windowDel.swift in Sources */,
 				3FCDE5701F3BA56B00D3C7C0 /* PopUpWindowController.swift in Sources */,
 				9AE4B0AC2033157F008D1B44 /* UserAccountsController.swift in Sources */,
-				9ACE27FA1FE4284C0066C3C3 /* ContentManagerViewControllerHolder.swift in Sources */,
 				3FCDE5651F3BA56B00D3C7C0 /* EventWindowController.swift in Sources */,
-				9ACE27F91FE4284C0066C3C3 /* BackForwardViewController.swift in Sources */,
 				9A3D9B73207A1BDA008A2582 /* GoogleAccount.swift in Sources */,
 				9AA37EC42036976500B23448 /* IntegrationTabController.swift in Sources */,
 				3FCDE5571F3BA56B00D3C7C0 /* calendarData.swift in Sources */,
 				3FCDE5561F3BA56B00D3C7C0 /* calendarCellView.swift in Sources */,
 				3FCDE5641F3BA56B00D3C7C0 /* eventTable.swift in Sources */,
 				3FCDE5751F3BA56B00D3C7C0 /* RepeatComboBoxDelegate.swift in Sources */,
-				9ACE27EA1FE40A490066C3C3 /* FacebookLoginController.swift in Sources */,
-				9ACE27EB1FE40A490066C3C3 /* FBLoginController.swift in Sources */,
 				3FCDE5731F3BA56B00D3C7C0 /* PreferencesWindowController.swift in Sources */,
 				3FCDE5591F3BA56B00D3C7C0 /* CalendarViewController.swift in Sources */,
 				3FCDE5131F3BA4D000D3C7C0 /* AppDelegate.swift in Sources */,
 				3FCDE5761F3BA56B00D3C7C0 /* WhiteView.swift in Sources */,
-				9A88C3F61FE97CC2009BB6DF /* StringISOToDate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
