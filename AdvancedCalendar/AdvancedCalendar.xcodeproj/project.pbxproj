@@ -287,7 +287,6 @@
 			children = (
 				9A19601B206D17AC00188473 /* Google Event Manager */,
 				9AD3B8031FE7D4B800210976 /* FacebookEventManager */,
-				9ACE27D31FE3F5CE0066C3C3 /* FacebookLoginController */,
 				3FCDE5781F3BA5C500D3C7C0 /* AdvancedCalendar.entitlements */,
 				EA0FE8D51F7A04A600582D53 /* Lilius App Icon.icns */,
 				3FCDE5211F3BA56B00D3C7C0 /* Arrow left 50.png */,
@@ -386,13 +385,6 @@
 				9AABEF5821FDA9D800CBC984 /* FacebookEventManager.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		9ACE27D31FE3F5CE0066C3C3 /* FacebookLoginController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = FacebookLoginController;
 			sourceTree = "<group>";
 		};
 		9AD3B8031FE7D4B800210976 /* FacebookEventManager */ = {
