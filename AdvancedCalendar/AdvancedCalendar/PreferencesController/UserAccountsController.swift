@@ -35,6 +35,8 @@ class UserAccountsController: NSViewController, NSOutlineViewDataSource, NSOutli
     static let collectionCellIdentifier = "DataCell"
     
     static func registerActiveAccounts(){
+    GoogleEventManagerConfiguration.sharedconfiguration.configure(calendarTitle: "Advanced Calendar", identifier: "ah.com.AdvancedCalendar", keychainName: "Advanced Calendar: Google Auth", secret: "YVmUZWTVO5pwHWztT4xKdKgu", clientIdent: "753256904541-p7pq7083ocr4976l9i5smu1ejor8393o.apps.googleusercontent.com")
+        
         let collections = PreferencesStore.sharedInstance.userAccountsObjects()
         for acc in collections {
             if acc.status == 1{
@@ -43,7 +45,8 @@ class UserAccountsController: NSViewController, NSOutlineViewDataSource, NSOutli
                     switch (accID) {
                     case "com.facebook":
                         print(accID)
-                        FacebookEventManager.refreshAccessToken(); FBEventStroreManger.sharedStore.setupRefreshFacebookEventsTimer()
+                        FacebookEventManager.refreshAccessToken();
+                    FBEventStroreManger.sharedStore.setupRefreshFacebookEventsTimer()
                         //                menuObj.status = 1
                     //                syncObjectState()
                     case "com.google":
