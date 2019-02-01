@@ -8,7 +8,7 @@
 
 import Cocoa
 import ServiceManagement
-import Facebook_Mac_Core
+//import Facebook_Mac_Core
 
 let AppName : String = "NEW CALENDAR APP"
 let WEEK_ROWS_IN_CALENDAR : Int = 6
