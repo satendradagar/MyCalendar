@@ -8,6 +8,7 @@
 
 import Foundation
 import Cocoa
+import Cocoa_Extensions
 
 class AccountDetailsController: NSViewController {
     

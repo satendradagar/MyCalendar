@@ -70,12 +70,22 @@ class PreferencesWindowController: NSWindowController {
     @IBOutlet var btn_12Hours: NSButton!
     @IBOutlet var btn_ShowSecond: NSButton!
     @IBOutlet var btn_FBlogin: NSButton!
+    
+    @IBOutlet weak var tabView: NSTabView!
 
  //   @IBOutlet weak var dateSettingBrowserOutlet: NSView!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+/* Disabled social integration
+         remove below line, it hides last tab of social integration
+*/
+        tabView.tabViewItems.remove(at: 2)
+    }
     override func windowDidLoad() {
         super.windowDidLoad()
         setIntialDefaultValues()
+    
         // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
         self.yearSettingView.isHidden = true
         self.monthSettingView.isHidden = true
