@@ -73,8 +73,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             DistributedNotificationCenter.default().post(name: Notification.Name("killme"), object: Bundle.main.bundleIdentifier!)
             print("I KILLED LAUNCHER APP")
         }
-        
-        
+        //Disable crete event action
+        menu.removeItem(at: 0)
 
     }
 
