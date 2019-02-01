@@ -22,6 +22,8 @@ class IntegrationTabController: NSTabViewItem {
 //    @IBOutlet var btn_12Hours: NSButton!
 //    @IBOutlet var btn_ShowSecond: NSButton!
 //    @IBOutlet var btn_FBlogin: NSButton!
+
+/* Disabled social integration
     override func awakeFromNib() {
         
         accountListController.accountSelectionHanldler = ({(selected) in
@@ -50,4 +52,5 @@ class IntegrationTabController: NSTabViewItem {
             }
         })
     }
+ */
 }

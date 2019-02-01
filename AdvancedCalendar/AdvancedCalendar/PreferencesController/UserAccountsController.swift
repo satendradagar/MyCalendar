@@ -7,10 +7,11 @@
 */
 
 import Cocoa
+/* Disabled social integration
 import Facebook_Mac_Core
 import FacebookEventManager
 import Google_Event_Manager
-
+*/
 
 /**
     `ImageCollectionListController` displays a list of `ImageCollection`s in an
@@ -19,9 +20,12 @@ import Google_Event_Manager
 */
 class UserAccountsController: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate {
     // MARK: Properties
+/* Disabled social integration
+
     var facebookLoginWindow: FacebookLoginWindowController?
     var googleLoginManager = GoogleLoginManager.sharedInstance
-
+*/
+    
     @IBOutlet var outlineView: NSOutlineView!
     @IBOutlet var accountsMenu: NSMenu!
 
@@ -34,6 +38,8 @@ class UserAccountsController: NSViewController, NSOutlineViewDataSource, NSOutli
     /// The identifier used for collection rows in the outline view
     static let collectionCellIdentifier = "DataCell"
     
+    /* Disabled social integration
+
     static func registerActiveAccounts(){
     GoogleEventManagerConfiguration.sharedconfiguration.configure(calendarTitle: "Advanced Calendar", identifier: "ah.com.AdvancedCalendar", keychainName: "Advanced Calendar: Google Auth", secret: "YVmUZWTVO5pwHWztT4xKdKgu", clientIdent: "753256904541-p7pq7083ocr4976l9i5smu1ejor8393o.apps.googleusercontent.com")
         
@@ -389,6 +395,7 @@ func isSignedIn() -> Bool {
         reloadOutlineAndSelectFirstItemIfNecessary()
 
     }
+    */
 }
 
 //For preferences window

@@ -7,17 +7,20 @@
 //
 
 import Cocoa
+
+/* Disabled social integration
 import Facebook_Mac_Core
 import FacebookEventManager
 import Google_Event_Manager
 //import
+*/
 
 class PreferencesWindowController: NSWindowController {
-    
     var prefStore = PreferencesStore.sharedInstance
+    /* Disabled social integration
     var facebookLoginWindow: FacebookLoginWindowController?
     var googleLoginManager = GoogleLoginManager.sharedInstance
-    
+    */
     @IBOutlet weak var outletRunAtLogin: NSButton!
     @IBOutlet weak var outletFirstDayOfWeek: NSComboBox!
     @IBOutlet weak var outletHighlightDays: NSSegmentedControl!
@@ -770,7 +773,8 @@ class PreferencesWindowController: NSWindowController {
         prefStore.saveStateKey_12Hours()
         prefStore.saveStateKey_ShowSecond()
     }
-   
+    
+/* Disabled social integration
     @IBAction func didClickFacebookLogin(_ sender: NSButton) {
         let defaults = UserDefaults.standard
         if defaults.bool(forKey: "fbLogin") {
@@ -795,7 +799,9 @@ class PreferencesWindowController: NSWindowController {
             }
         }
     }
-    
+    */
+
+/* Disabled social integration
 
     func updateUserProfileData()  {
         let req = GraphRequest(graphPath: "me", parameters:[:], accessToken: AccessToken.current, httpMethod: GraphRequestHTTPMethod(rawValue: "GET")!)
@@ -827,6 +833,6 @@ class PreferencesWindowController: NSWindowController {
             }
         })
     }
-    
+    */
 }
 

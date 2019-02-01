@@ -39,8 +39,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 //        SDKSettings.autoLoginEnable = false
-    SDKApplicationDelegate.shared.applicationDidFinishLaunching(aNotification)
+   
+/* Disabled social integration SDKApplicationDelegate.shared.applicationDidFinishLaunching(aNotification)
         UserAccountsController.registerActiveAccounts()
+ */
         statusItem.target = self
         statusItem.action = #selector(AppDelegate.togglePopover(_:))
         //        statusItem.title = statusBarTitleString()
